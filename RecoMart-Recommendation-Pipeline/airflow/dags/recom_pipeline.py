@@ -20,6 +20,10 @@ import logging
 import sys
 from pathlib import Path
 
+# Import monitoring utilities
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from monitoring import task_failure_callback, task_success_callback, task_retry_callback
+
 # Logging configuration
 logging.basicConfig(
     level=logging.INFO,
@@ -232,6 +236,9 @@ with dag:
             provide_context=True,
             retries=2,
             retry_delay=timedelta(minutes=5),
+            on_failure_callback=task_failure_callback,
+            on_success_callback=task_success_callback,
+            on_retry_callback=task_retry_callback,
         )
 
     with TaskGroup("validation_layer", tooltip="Data Validation") as validation_layer:
@@ -241,6 +248,9 @@ with dag:
             provide_context=True,
             retries=1,
             retry_delay=timedelta(minutes=3),
+            on_failure_callback=task_failure_callback,
+            on_success_callback=task_success_callback,
+            on_retry_callback=task_retry_callback,
         )
 
     with TaskGroup("preparation_layer", tooltip="Data Preparation") as preparation_layer:
@@ -250,6 +260,9 @@ with dag:
             provide_context=True,
             retries=1,
             retry_delay=timedelta(minutes=3),
+            on_failure_callback=task_failure_callback,
+            on_success_callback=task_success_callback,
+            on_retry_callback=task_retry_callback,
         )
 
     with TaskGroup("feature_layer", tooltip="Feature Engineering & Store") as feature_layer:
@@ -259,6 +272,9 @@ with dag:
             provide_context=True,
             retries=1,
             retry_delay=timedelta(minutes=3),
+            on_failure_callback=task_failure_callback,
+            on_success_callback=task_success_callback,
+            on_retry_callback=task_retry_callback,
         )
 
         feature_store = PythonOperator(
@@ -267,6 +283,9 @@ with dag:
             provide_context=True,
             retries=1,
             retry_delay=timedelta(minutes=3),
+            on_failure_callback=task_failure_callback,
+            on_success_callback=task_success_callback,
+            on_retry_callback=task_retry_callback,
         )
 
     with TaskGroup("model_layer", tooltip="Model Training & Evaluation") as model_layer:
@@ -276,6 +295,9 @@ with dag:
             provide_context=True,
             retries=2,
             retry_delay=timedelta(minutes=5),
+            on_failure_callback=task_failure_callback,
+            on_success_callback=task_success_callback,
+            on_retry_callback=task_retry_callback,
         )
 
     end = PythonOperator(
