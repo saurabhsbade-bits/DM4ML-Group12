@@ -1,0 +1,151 @@
+2026-07-16 22:19:58,654 | INFO | Logger initialized successfully.
+2026-07-16 22:19:58,654 | WARNING | This is a warning message.
+2026-07-16 22:19:58,655 | ERROR | This is a sample error message.
+2026-07-16 22:25:42,884 | INFO | CSV ingestion started
+2026-07-16 22:25:42,885 | INFO | Starting ingestion for ratings
+2026-07-16 22:25:42,888 | INFO | ratings.csv copied successfully to C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\ratings\2026\07\16\222542\ratings.csv
+2026-07-16 22:25:42,888 | INFO | Starting ingestion for movies
+2026-07-16 22:25:42,889 | INFO | movies.csv copied successfully to C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\movies\2026\07\16\222542\movies.csv
+2026-07-16 22:25:42,889 | INFO | CSV ingestion completed
+2026-07-16 22:31:29,929 | INFO | 
+2026-07-16 22:31:29,929 | INFO | *************** CSV INGESTION STARTED ***************
+2026-07-16 22:31:29,930 | INFO | ============================================================
+2026-07-16 22:31:29,930 | INFO | Starting ingestion : movies
+2026-07-16 22:31:29,931 | INFO | Source      : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\movies.csv
+2026-07-16 22:31:29,931 | INFO | Destination : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\movies\2026\07\16\223129\movies.csv
+2026-07-16 22:31:29,931 | INFO | Status      : SUCCESS
+2026-07-16 22:31:29,931 | INFO | Completed ingestion : movies
+2026-07-16 22:31:29,931 | INFO | ============================================================
+2026-07-16 22:31:29,931 | INFO | ============================================================
+2026-07-16 22:31:29,932 | INFO | Starting ingestion : ratings
+2026-07-16 22:31:29,933 | INFO | Source      : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\ratings.csv
+2026-07-16 22:31:29,933 | INFO | Destination : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\ratings\2026\07\16\223129\ratings.csv
+2026-07-16 22:31:29,933 | INFO | Status      : SUCCESS
+2026-07-16 22:31:29,933 | INFO | Completed ingestion : ratings
+2026-07-16 22:31:29,934 | INFO | ============================================================
+2026-07-16 22:31:29,934 | INFO | ============================================================
+2026-07-16 22:31:29,934 | INFO | Starting ingestion : links
+2026-07-16 22:31:29,935 | INFO | Source      : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\links.csv
+2026-07-16 22:31:29,935 | INFO | Destination : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\links\2026\07\16\223129\links.csv
+2026-07-16 22:31:29,935 | INFO | Status      : SUCCESS
+2026-07-16 22:31:29,935 | INFO | Completed ingestion : links
+2026-07-16 22:31:29,936 | INFO | ============================================================
+2026-07-16 22:31:29,936 | INFO | ============================================================
+2026-07-16 22:31:29,936 | INFO | Starting ingestion : tags
+2026-07-16 22:31:29,937 | INFO | Source      : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\tags.csv
+2026-07-16 22:31:29,937 | INFO | Destination : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\tags\2026\07\16\223129\tags.csv
+2026-07-16 22:31:29,937 | INFO | Status      : SUCCESS
+2026-07-16 22:31:29,937 | INFO | Completed ingestion : tags
+2026-07-16 22:31:29,937 | INFO | ============================================================
+2026-07-16 22:31:29,938 | INFO | *************** CSV INGESTION COMPLETED *************
+2026-07-16 22:44:40,215 | INFO | ============================================================
+2026-07-16 22:44:40,215 | INFO | API INGESTION STARTED
+2026-07-16 22:44:40,215 | INFO | API Request Attempt 1
+2026-07-16 22:44:40,554 | INFO | API data stored at C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\api\products\2026\07\16\224440\products.json
+2026-07-16 22:44:40,555 | INFO | API INGESTION COMPLETED
+2026-07-16 22:44:40,555 | INFO | ============================================================
+2026-07-16 22:50:28,579 | INFO | Metadata saved -> C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\metadata\ingestion_metadata.json
+2026-07-16 22:53:43,370 | INFO | ====================================================================================================
+2026-07-16 22:53:43,370 | INFO | RecoMart Recommendation Pipeline Started
+2026-07-16 22:53:43,370 | INFO | ====================================================================================================
+2026-07-16 22:53:43,371 | INFO | ================================================================================
+2026-07-16 22:53:43,371 | INFO | CSV INGESTION STARTED
+2026-07-16 22:53:43,371 | INFO | ================================================================================
+2026-07-16 22:53:43,371 | INFO | ============================================================
+2026-07-16 22:53:43,371 | INFO | Starting ingestion : movies
+2026-07-16 22:53:43,381 | INFO | Source      : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\movies.csv
+2026-07-16 22:53:43,382 | INFO | Destination : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\movies\2026\07\16\225343\movies.csv
+2026-07-16 22:53:43,382 | INFO | Status      : SUCCESS
+2026-07-16 22:53:43,383 | INFO | Completed ingestion : movies
+2026-07-16 22:53:43,383 | INFO | ============================================================
+2026-07-16 22:53:43,383 | INFO | ============================================================
+2026-07-16 22:53:43,383 | INFO | Starting ingestion : ratings
+2026-07-16 22:53:43,415 | INFO | Source      : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\ratings.csv
+2026-07-16 22:53:43,415 | INFO | Destination : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\ratings\2026\07\16\225343\ratings.csv
+2026-07-16 22:53:43,415 | INFO | Status      : SUCCESS
+2026-07-16 22:53:43,415 | INFO | Completed ingestion : ratings
+2026-07-16 22:53:43,416 | INFO | ============================================================
+2026-07-16 22:53:43,416 | INFO | ============================================================
+2026-07-16 22:53:43,416 | INFO | Starting ingestion : links
+2026-07-16 22:53:43,421 | INFO | Source      : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\links.csv
+2026-07-16 22:53:43,422 | INFO | Destination : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\links\2026\07\16\225343\links.csv
+2026-07-16 22:53:43,422 | INFO | Status      : SUCCESS
+2026-07-16 22:53:43,422 | INFO | Completed ingestion : links
+2026-07-16 22:53:43,422 | INFO | ============================================================
+2026-07-16 22:53:43,422 | INFO | ============================================================
+2026-07-16 22:53:43,422 | INFO | Starting ingestion : tags
+2026-07-16 22:53:43,426 | INFO | Source      : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\tags.csv
+2026-07-16 22:53:43,426 | INFO | Destination : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\tags\2026\07\16\225343\tags.csv
+2026-07-16 22:53:43,426 | INFO | Status      : SUCCESS
+2026-07-16 22:53:43,426 | INFO | Completed ingestion : tags
+2026-07-16 22:53:43,427 | INFO | ============================================================
+2026-07-16 22:53:43,427 | INFO | Metadata saved -> C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\metadata\ingestion_metadata.json
+2026-07-16 22:53:43,427 | INFO | ================================================================================
+2026-07-16 22:53:43,427 | INFO | CSV INGESTION COMPLETED
+2026-07-16 22:53:43,428 | INFO | ================================================================================
+2026-07-16 22:53:43,428 | INFO | ================================================================================
+2026-07-16 22:53:43,428 | INFO | API INGESTION STARTED
+2026-07-16 22:53:43,428 | INFO | ================================================================================
+2026-07-16 22:53:43,428 | INFO | API Request Attempt 1
+2026-07-16 22:53:43,719 | INFO | Metadata saved -> C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\metadata\ingestion_metadata.json
+2026-07-16 22:53:43,719 | INFO | API data stored at C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\api\products\2026\07\16\225343\products.json
+2026-07-16 22:53:43,719 | INFO | ================================================================================
+2026-07-16 22:53:43,720 | INFO | API INGESTION COMPLETED
+2026-07-16 22:53:43,720 | INFO | ================================================================================
+2026-07-16 22:53:43,720 | INFO | ====================================================================================================
+2026-07-16 22:53:43,720 | INFO | RecoMart Recommendation Pipeline Completed
+2026-07-16 22:53:43,721 | INFO | ====================================================================================================
+2026-07-16 22:56:41,945 | INFO | ====================================================================================================
+2026-07-16 22:56:41,945 | INFO | RecoMart Recommendation Pipeline Started
+2026-07-16 22:56:41,945 | INFO | ====================================================================================================
+2026-07-16 22:56:41,945 | INFO | ================================================================================
+2026-07-16 22:56:41,945 | INFO | CSV INGESTION STARTED
+2026-07-16 22:56:41,946 | INFO | ================================================================================
+2026-07-16 22:56:41,946 | INFO | ============================================================
+2026-07-16 22:56:41,946 | INFO | Starting ingestion : movies
+2026-07-16 22:56:41,956 | INFO | Source      : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\movies.csv
+2026-07-16 22:56:41,956 | INFO | Destination : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\movies\2026\07\16\225641\movies.csv
+2026-07-16 22:56:41,956 | INFO | Status      : SUCCESS
+2026-07-16 22:56:41,956 | INFO | Completed ingestion : movies
+2026-07-16 22:56:41,956 | INFO | ============================================================
+2026-07-16 22:56:41,957 | INFO | ============================================================
+2026-07-16 22:56:41,957 | INFO | Starting ingestion : ratings
+2026-07-16 22:56:41,989 | INFO | Source      : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\ratings.csv
+2026-07-16 22:56:41,989 | INFO | Destination : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\ratings\2026\07\16\225641\ratings.csv
+2026-07-16 22:56:41,989 | INFO | Status      : SUCCESS
+2026-07-16 22:56:41,989 | INFO | Completed ingestion : ratings
+2026-07-16 22:56:41,989 | INFO | ============================================================
+2026-07-16 22:56:41,990 | INFO | ============================================================
+2026-07-16 22:56:41,990 | INFO | Starting ingestion : links
+2026-07-16 22:56:41,996 | INFO | Source      : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\links.csv
+2026-07-16 22:56:41,996 | INFO | Destination : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\links\2026\07\16\225641\links.csv
+2026-07-16 22:56:41,996 | INFO | Status      : SUCCESS
+2026-07-16 22:56:41,996 | INFO | Completed ingestion : links
+2026-07-16 22:56:41,996 | INFO | ============================================================
+2026-07-16 22:56:41,996 | INFO | ============================================================
+2026-07-16 22:56:41,996 | INFO | Starting ingestion : tags
+2026-07-16 22:56:42,000 | INFO | Source      : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\tags.csv
+2026-07-16 22:56:42,000 | INFO | Destination : C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\tags\2026\07\16\225641\tags.csv
+2026-07-16 22:56:42,000 | INFO | Status      : SUCCESS
+2026-07-16 22:56:42,000 | INFO | Completed ingestion : tags
+2026-07-16 22:56:42,000 | INFO | ============================================================
+2026-07-16 22:56:42,000 | INFO | ================================================================================
+2026-07-16 22:56:42,000 | INFO | CSV INGESTION COMPLETED
+2026-07-16 22:56:42,001 | INFO | ================================================================================
+2026-07-16 22:56:42,001 | INFO | ================================================================================
+2026-07-16 22:56:42,001 | INFO | API INGESTION STARTED
+2026-07-16 22:56:42,001 | INFO | ================================================================================
+2026-07-16 22:56:42,001 | INFO | API Request Attempt 1
+2026-07-16 22:56:42,194 | INFO | API data stored at C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\api\products\2026\07\16\225642\products.json
+2026-07-16 22:56:42,194 | INFO | ================================================================================
+2026-07-16 22:56:42,195 | INFO | API INGESTION COMPLETED
+2026-07-16 22:56:42,195 | INFO | ================================================================================
+2026-07-16 22:56:42,196 | INFO | Metadata saved -> C:\projects\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\metadata\ingestion_metadata.json
+2026-07-16 22:56:42,196 | INFO | ====================================================================================================
+2026-07-16 22:56:42,196 | INFO | RecoMart Recommendation Pipeline Completed
+2026-07-16 22:56:42,196 | INFO | ====================================================================================================
+2026-07-16 23:00:52,643 | INFO | ====================================================================================================
+2026-07-16 23:00:52,643 | INFO | RecoMart Recommendation Pipeline Scheduler Started
+2026-07-16 23:00:52,643 | INFO | Pipeline scheduled daily at 10:00
+2026-07-16 23:00:52,644 | INFO | ====================================================================================================
+2026-07-16 23:00:55,504 | INFO | Scheduler stopped by user.
