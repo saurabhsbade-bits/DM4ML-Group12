@@ -1,0 +1,576 @@
+{
+    "status": "COMPLETED",
+    "timestamp": "2026-07-19T03:06:39.048156",
+    "validation": {
+        "movies": {
+            "dataset": "movies",
+            "file_path": "/mnt/f/DM4MLPROJECT/DM4ML-Group12/RecoMart-Recommendation-Pipeline/dataset/movies.csv",
+            "timestamp": "2026-07-19T03:06:38.542233",
+            "total_rows": 9742,
+            "total_columns": 3,
+            "checks": {
+                "schema": {
+                    "check": "Schema Validation",
+                    "details": {},
+                    "status": "PASS",
+                    "message": "All required columns present",
+                    "columns_found": [
+                        "movieId",
+                        "title",
+                        "genres"
+                    ],
+                    "columns_expected": [
+                        "movieId",
+                        "title",
+                        "genres"
+                    ]
+                },
+                "missing_values": {
+                    "check": "Missing Values",
+                    "details": {
+                        "null_count": 0,
+                        "affected_columns": []
+                    },
+                    "status": "PASS",
+                    "message": "No missing values detected"
+                },
+                "duplicates": {
+                    "check": "Duplicate Detection",
+                    "details": {
+                        "duplicate_count": 0
+                    },
+                    "status": "PASS",
+                    "message": "No duplicate rows detected"
+                },
+                "data_types": {
+                    "check": "Data Type Validation",
+                    "details": {},
+                    "status": "PASS",
+                    "message": "All data types match schema"
+                }
+            },
+            "issues": [],
+            "status": "PASS",
+            "passed": 4,
+            "failed": 0
+        },
+        "ratings": {
+            "dataset": "ratings",
+            "file_path": "/mnt/f/DM4MLPROJECT/DM4ML-Group12/RecoMart-Recommendation-Pipeline/dataset/ratings.csv",
+            "timestamp": "2026-07-19T03:06:38.891252",
+            "total_rows": 100836,
+            "total_columns": 4,
+            "checks": {
+                "schema": {
+                    "check": "Schema Validation",
+                    "details": {},
+                    "status": "PASS",
+                    "message": "All required columns present",
+                    "columns_found": [
+                        "userId",
+                        "movieId",
+                        "rating",
+                        "timestamp"
+                    ],
+                    "columns_expected": [
+                        "userId",
+                        "movieId",
+                        "rating",
+                        "timestamp"
+                    ]
+                },
+                "missing_values": {
+                    "check": "Missing Values",
+                    "details": {
+                        "null_count": 0,
+                        "affected_columns": []
+                    },
+                    "status": "PASS",
+                    "message": "No missing values detected"
+                },
+                "duplicates": {
+                    "check": "Duplicate Detection",
+                    "details": {
+                        "duplicate_count": 0
+                    },
+                    "status": "PASS",
+                    "message": "No duplicate rows detected"
+                },
+                "data_types": {
+                    "check": "Data Type Validation",
+                    "details": {},
+                    "status": "PASS",
+                    "message": "All data types match schema"
+                },
+                "constraints": {
+                    "check": "Business Logic Constraints",
+                    "details": {},
+                    "status": "PASS",
+                    "message": "All constraints satisfied"
+                }
+            },
+            "issues": [],
+            "status": "PASS",
+            "passed": 5,
+            "failed": 0
+        },
+        "links": {
+            "dataset": "links",
+            "file_path": "/mnt/f/DM4MLPROJECT/DM4ML-Group12/RecoMart-Recommendation-Pipeline/dataset/links.csv",
+            "timestamp": "2026-07-19T03:06:38.980753",
+            "total_rows": 9742,
+            "total_columns": 3,
+            "checks": {
+                "schema": {
+                    "check": "Schema Validation",
+                    "details": {},
+                    "status": "PASS",
+                    "message": "All required columns present",
+                    "columns_found": [
+                        "movieId",
+                        "imdbId",
+                        "tmdbId"
+                    ],
+                    "columns_expected": [
+                        "movieId",
+                        "imdbId",
+                        "tmdbId"
+                    ]
+                },
+                "missing_values": {
+                    "check": "Missing Values",
+                    "details": {
+                        "tmdbId": {
+                            "null_count": 8,
+                            "null_percentage": 0.08
+                        }
+                    },
+                    "status": "FAIL",
+                    "message": "Found 8 null values across columns"
+                },
+                "duplicates": {
+                    "check": "Duplicate Detection",
+                    "details": {
+                        "duplicate_count": 0
+                    },
+                    "status": "PASS",
+                    "message": "No duplicate rows detected"
+                },
+                "data_types": {
+                    "check": "Data Type Validation",
+                    "details": {
+                        "tmdbId": {
+                            "expected": "int",
+                            "actual": "float64"
+                        }
+                    },
+                    "status": "FAIL",
+                    "message": "Data type mismatches found in 1 columns"
+                }
+            },
+            "issues": [
+                {
+                    "type": "Missing Values",
+                    "severity": "MEDIUM",
+                    "message": "Total missing values: 8",
+                    "details": {
+                        "tmdbId": {
+                            "null_count": 8,
+                            "null_percentage": 0.08
+                        }
+                    }
+                },
+                {
+                    "type": "Data Type Mismatch",
+                    "severity": "MEDIUM",
+                    "message": "Type mismatches in: ['tmdbId']"
+                }
+            ],
+            "status": "FAIL",
+            "passed": 2,
+            "failed": 2
+        },
+        "tags": {
+            "dataset": "tags",
+            "file_path": "/mnt/f/DM4MLPROJECT/DM4ML-Group12/RecoMart-Recommendation-Pipeline/dataset/tags.csv",
+            "timestamp": "2026-07-19T03:06:38.999541",
+            "total_rows": 3683,
+            "total_columns": 4,
+            "checks": {
+                "schema": {
+                    "check": "Schema Validation",
+                    "details": {},
+                    "status": "PASS",
+                    "message": "All required columns present",
+                    "columns_found": [
+                        "userId",
+                        "movieId",
+                        "tag",
+                        "timestamp"
+                    ],
+                    "columns_expected": [
+                        "userId",
+                        "movieId",
+                        "tag",
+                        "timestamp"
+                    ]
+                },
+                "missing_values": {
+                    "check": "Missing Values",
+                    "details": {
+                        "null_count": 0,
+                        "affected_columns": []
+                    },
+                    "status": "PASS",
+                    "message": "No missing values detected"
+                },
+                "duplicates": {
+                    "check": "Duplicate Detection",
+                    "details": {
+                        "duplicate_count": 0
+                    },
+                    "status": "PASS",
+                    "message": "No duplicate rows detected"
+                },
+                "data_types": {
+                    "check": "Data Type Validation",
+                    "details": {},
+                    "status": "PASS",
+                    "message": "All data types match schema"
+                }
+            },
+            "issues": [],
+            "status": "PASS",
+            "passed": 4,
+            "failed": 0
+        }
+    },
+    "profiling": {
+        "total_datasets": 4,
+        "average_quality_score": 100.0,
+        "profiles": {
+            "movies": {
+                "dataset": "movies",
+                "file_path": "/mnt/f/DM4MLPROJECT/DM4ML-Group12/RecoMart-Recommendation-Pipeline/dataset/movies.csv",
+                "timestamp": "2026-07-19T03:06:39.048156",
+                "basic_info": {
+                    "total_rows": 9742,
+                    "total_columns": 3,
+                    "memory_usage_mb": 1.53,
+                    "duplicate_rows": 0,
+                    "duplicate_percentage": 0.0
+                },
+                "column_profiles": {
+                    "movieId": {
+                        "name": "movieId",
+                        "data_type": "int64",
+                        "non_null_count": 9742,
+                        "null_count": 0,
+                        "null_percentage": 0.0,
+                        "unique_values": 9742,
+                        "cardinality": 100.0,
+                        "min": 1.0,
+                        "max": 193609.0,
+                        "mean": 42200.353623485935,
+                        "median": 7300.0,
+                        "std_dev": 52160.49485443833,
+                        "q25": 3248.25,
+                        "q75": 76232.0
+                    },
+                    "title": {
+                        "name": "title",
+                        "data_type": "object",
+                        "non_null_count": 9742,
+                        "null_count": 0,
+                        "null_percentage": 0.0,
+                        "unique_values": 9737,
+                        "cardinality": 99.95,
+                        "min_length": 6,
+                        "max_length": 158,
+                        "avg_length": 25.85,
+                        "top_values": {
+                            "Emma (1996)": 2,
+                            "War of the Worlds (2005)": 2,
+                            "Eros (2004)": 2,
+                            "Confessions of a Dangerous Mind (2002)": 2,
+                            "Saturn 3 (1980)": 2
+                        }
+                    },
+                    "genres": {
+                        "name": "genres",
+                        "data_type": "object",
+                        "non_null_count": 9742,
+                        "null_count": 0,
+                        "null_percentage": 0.0,
+                        "unique_values": 951,
+                        "cardinality": 9.76,
+                        "min_length": 3,
+                        "max_length": 77,
+                        "avg_length": 15.9,
+                        "top_values": {
+                            "Drama": 1053,
+                            "Comedy": 946,
+                            "Comedy|Drama": 435,
+                            "Comedy|Romance": 363,
+                            "Drama|Romance": 349
+                        }
+                    }
+                },
+                "data_quality_metrics": {
+                    "completeness_percentage": 100.0,
+                    "validity_percentage": 100,
+                    "total_cells": 29226,
+                    "missing_cells": 0,
+                    "duplicate_rows_count": 0,
+                    "overall_quality_score": 100.0
+                }
+            },
+            "ratings": {
+                "dataset": "ratings",
+                "file_path": "/mnt/f/DM4MLPROJECT/DM4ML-Group12/RecoMart-Recommendation-Pipeline/dataset/ratings.csv",
+                "timestamp": "2026-07-19T03:06:39.288987",
+                "basic_info": {
+                    "total_rows": 100836,
+                    "total_columns": 4,
+                    "memory_usage_mb": 3.08,
+                    "duplicate_rows": 0,
+                    "duplicate_percentage": 0.0
+                },
+                "column_profiles": {
+                    "userId": {
+                        "name": "userId",
+                        "data_type": "int64",
+                        "non_null_count": 100836,
+                        "null_count": 0,
+                        "null_percentage": 0.0,
+                        "unique_values": 610,
+                        "cardinality": 0.6,
+                        "min": 1.0,
+                        "max": 610.0,
+                        "mean": 326.12756356856676,
+                        "median": 325.0,
+                        "std_dev": 182.61849146349994,
+                        "q25": 177.0,
+                        "q75": 477.0
+                    },
+                    "movieId": {
+                        "name": "movieId",
+                        "data_type": "int64",
+                        "non_null_count": 100836,
+                        "null_count": 0,
+                        "null_percentage": 0.0,
+                        "unique_values": 9724,
+                        "cardinality": 9.64,
+                        "min": 1.0,
+                        "max": 193609.0,
+                        "mean": 19435.2957177992,
+                        "median": 2991.0,
+                        "std_dev": 35530.98719870018,
+                        "q25": 1199.0,
+                        "q75": 8122.0
+                    },
+                    "rating": {
+                        "name": "rating",
+                        "data_type": "float64",
+                        "non_null_count": 100836,
+                        "null_count": 0,
+                        "null_percentage": 0.0,
+                        "unique_values": 10,
+                        "cardinality": 0.01,
+                        "min": 0.5,
+                        "max": 5.0,
+                        "mean": 3.501556983616962,
+                        "median": 3.5,
+                        "std_dev": 1.042529239060635,
+                        "q25": 3.0,
+                        "q75": 4.0
+                    },
+                    "timestamp": {
+                        "name": "timestamp",
+                        "data_type": "int64",
+                        "non_null_count": 100836,
+                        "null_count": 0,
+                        "null_percentage": 0.0,
+                        "unique_values": 85043,
+                        "cardinality": 84.34,
+                        "min": 828124615.0,
+                        "max": 1537799250.0,
+                        "mean": 1205946087.3684695,
+                        "median": 1186086662.0,
+                        "std_dev": 216261035.99513158,
+                        "q25": 1019123866.0,
+                        "q75": 1435994144.5
+                    }
+                },
+                "data_quality_metrics": {
+                    "completeness_percentage": 100.0,
+                    "validity_percentage": 100,
+                    "total_cells": 403344,
+                    "missing_cells": 0,
+                    "duplicate_rows_count": 0,
+                    "overall_quality_score": 100.0
+                }
+            },
+            "links": {
+                "dataset": "links",
+                "file_path": "/mnt/f/DM4MLPROJECT/DM4ML-Group12/RecoMart-Recommendation-Pipeline/dataset/links.csv",
+                "timestamp": "2026-07-19T03:06:39.426652",
+                "basic_info": {
+                    "total_rows": 9742,
+                    "total_columns": 3,
+                    "memory_usage_mb": 0.22,
+                    "duplicate_rows": 0,
+                    "duplicate_percentage": 0.0
+                },
+                "column_profiles": {
+                    "movieId": {
+                        "name": "movieId",
+                        "data_type": "int64",
+                        "non_null_count": 9742,
+                        "null_count": 0,
+                        "null_percentage": 0.0,
+                        "unique_values": 9742,
+                        "cardinality": 100.0,
+                        "min": 1.0,
+                        "max": 193609.0,
+                        "mean": 42200.353623485935,
+                        "median": 7300.0,
+                        "std_dev": 52160.49485443833,
+                        "q25": 3248.25,
+                        "q75": 76232.0
+                    },
+                    "imdbId": {
+                        "name": "imdbId",
+                        "data_type": "int64",
+                        "non_null_count": 9742,
+                        "null_count": 0,
+                        "null_percentage": 0.0,
+                        "unique_values": 9742,
+                        "cardinality": 100.0,
+                        "min": 417.0,
+                        "max": 8391976.0,
+                        "mean": 677183.8981728598,
+                        "median": 167260.5,
+                        "std_dev": 1107227.576759764,
+                        "q25": 95180.75,
+                        "q75": 805568.5
+                    },
+                    "tmdbId": {
+                        "name": "tmdbId",
+                        "data_type": "float64",
+                        "non_null_count": 9734,
+                        "null_count": 8,
+                        "null_percentage": 0.08,
+                        "unique_values": 9733,
+                        "cardinality": 99.91,
+                        "min": 2.0,
+                        "max": 525662.0,
+                        "mean": 55162.123792890896,
+                        "median": 16529.0,
+                        "std_dev": 93653.48148734067,
+                        "q25": 9665.5,
+                        "q75": 44205.75
+                    }
+                },
+                "data_quality_metrics": {
+                    "completeness_percentage": 99.97,
+                    "validity_percentage": 100,
+                    "total_cells": 29226,
+                    "missing_cells": 8,
+                    "duplicate_rows_count": 0,
+                    "overall_quality_score": 99.98
+                }
+            },
+            "tags": {
+                "dataset": "tags",
+                "file_path": "/mnt/f/DM4MLPROJECT/DM4ML-Group12/RecoMart-Recommendation-Pipeline/dataset/tags.csv",
+                "timestamp": "2026-07-19T03:06:39.468861",
+                "basic_info": {
+                    "total_rows": 3683,
+                    "total_columns": 4,
+                    "memory_usage_mb": 0.32,
+                    "duplicate_rows": 0,
+                    "duplicate_percentage": 0.0
+                },
+                "column_profiles": {
+                    "userId": {
+                        "name": "userId",
+                        "data_type": "int64",
+                        "non_null_count": 3683,
+                        "null_count": 0,
+                        "null_percentage": 0.0,
+                        "unique_values": 58,
+                        "cardinality": 1.57,
+                        "min": 2.0,
+                        "max": 610.0,
+                        "mean": 431.1493347814282,
+                        "median": 474.0,
+                        "std_dev": 158.47255348483486,
+                        "q25": 424.0,
+                        "q75": 477.0
+                    },
+                    "movieId": {
+                        "name": "movieId",
+                        "data_type": "int64",
+                        "non_null_count": 3683,
+                        "null_count": 0,
+                        "null_percentage": 0.0,
+                        "unique_values": 1572,
+                        "cardinality": 42.68,
+                        "min": 1.0,
+                        "max": 193565.0,
+                        "mean": 27252.01357588922,
+                        "median": 4454.0,
+                        "std_dev": 43490.55880276778,
+                        "q25": 1262.5,
+                        "q75": 39263.0
+                    },
+                    "tag": {
+                        "name": "tag",
+                        "data_type": "object",
+                        "non_null_count": 3683,
+                        "null_count": 0,
+                        "null_percentage": 0.0,
+                        "unique_values": 1589,
+                        "cardinality": 43.14,
+                        "min_length": 2,
+                        "max_length": 85,
+                        "avg_length": 10.14,
+                        "top_values": {
+                            "In Netflix queue": 131,
+                            "atmospheric": 36,
+                            "thought-provoking": 24,
+                            "superhero": 24,
+                            "surreal": 23
+                        }
+                    },
+                    "timestamp": {
+                        "name": "timestamp",
+                        "data_type": "int64",
+                        "non_null_count": 3683,
+                        "null_count": 0,
+                        "null_percentage": 0.0,
+                        "unique_values": 3411,
+                        "cardinality": 92.61,
+                        "min": 1137179352.0,
+                        "max": 1537098603.0,
+                        "mean": 1320031966.823785,
+                        "median": 1269832564.0,
+                        "std_dev": 172102450.43712643,
+                        "q25": 1137521216.0,
+                        "q75": 1498456765.5
+                    }
+                },
+                "data_quality_metrics": {
+                    "completeness_percentage": 100.0,
+                    "validity_percentage": 100,
+                    "total_cells": 14732,
+                    "missing_cells": 0,
+                    "duplicate_rows_count": 0,
+                    "overall_quality_score": 100.0
+                }
+            }
+        }
+    },
+    "report_path": "/mnt/f/DM4MLPROJECT/DM4ML-Group12/RecoMart-Recommendation-Pipeline/data/reports/DataQualityReport_20260719_030639.html"
+}

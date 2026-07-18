@@ -1,51 +1,11 @@
 [
     {
-        "dataset": "movies",
-        "source_type": "CSV",
-        "source_file": "C:\\projects\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\dataset\\movies.csv",
-        "destination": "C:\\projects\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\csv\\movies\\2026\\07\\16\\225641\\movies.csv",
-        "records": 9742,
-        "file_size_mb": 0.47,
-        "status": "SUCCESS",
-        "ingestion_time": "2026-07-16T22:56:41.956401"
-    },
-    {
-        "dataset": "ratings",
-        "source_type": "CSV",
-        "source_file": "C:\\projects\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\dataset\\ratings.csv",
-        "destination": "C:\\projects\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\csv\\ratings\\2026\\07\\16\\225641\\ratings.csv",
-        "records": 100836,
-        "file_size_mb": 2.37,
-        "status": "SUCCESS",
-        "ingestion_time": "2026-07-16T22:56:41.989471"
-    },
-    {
-        "dataset": "links",
-        "source_type": "CSV",
-        "source_file": "C:\\projects\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\dataset\\links.csv",
-        "destination": "C:\\projects\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\csv\\links\\2026\\07\\16\\225641\\links.csv",
-        "records": 9742,
-        "file_size_mb": 0.19,
-        "status": "SUCCESS",
-        "ingestion_time": "2026-07-16T22:56:41.996205"
-    },
-    {
-        "dataset": "tags",
-        "source_type": "CSV",
-        "source_file": "C:\\projects\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\dataset\\tags.csv",
-        "destination": "C:\\projects\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\csv\\tags\\2026\\07\\16\\225641\\tags.csv",
-        "records": 3683,
-        "file_size_mb": 0.11,
-        "status": "SUCCESS",
-        "ingestion_time": "2026-07-16T22:56:42.000347"
-    },
-    {
         "dataset": "products",
         "source_type": "REST API",
-        "destination": "C:\\projects\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\api\\products\\2026\\07\\16\\225642\\products.json",
+        "destination": "/mnt/f/DM4MLPROJECT/DM4ML-Group12/RecoMart-Recommendation-Pipeline/data/raw/api/products/2026/07/19/030815/products.json",
         "records": 30,
         "file_size_mb": 0.07,
         "status": "SUCCESS",
-        "ingestion_time": "2026-07-16T22:56:42.194605"
+        "ingestion_time": "2026-07-19T03:08:15.492815"
     }
 ]

@@ -1,0 +1,108 @@
+{
+    "movies": {
+        "dataset": "movies",
+        "original_rows": 9742,
+        "original_columns": 3,
+        "operations": [
+            {
+                "operation": "Missing Value Handling",
+                "missing_columns": {},
+                "rows_dropped": 0
+            },
+            {
+                "operation": "Duplicate Handling",
+                "duplicates_found": 0,
+                "duplicates_removed": 0
+            },
+            {
+                "operation": "Data Type Fixing",
+                "type_conversions": {}
+            }
+        ],
+        "final_rows": 9742,
+        "final_columns": 3,
+        "rows_dropped": 0
+    },
+    "ratings": {
+        "dataset": "ratings",
+        "original_rows": 100836,
+        "original_columns": 4,
+        "operations": [
+            {
+                "operation": "Missing Value Handling",
+                "missing_columns": {},
+                "rows_dropped": 0
+            },
+            {
+                "operation": "Duplicate Handling",
+                "duplicates_found": 0,
+                "duplicates_removed": 0
+            },
+            {
+                "operation": "Data Type Fixing",
+                "type_conversions": {}
+            }
+        ],
+        "final_rows": 100836,
+        "final_columns": 4,
+        "rows_dropped": 0
+    },
+    "links": {
+        "dataset": "links",
+        "original_rows": 9742,
+        "original_columns": 3,
+        "operations": [
+            {
+                "operation": "Missing Value Handling",
+                "missing_columns": {
+                    "tmdbId": {
+                        "strategy": "drop",
+                        "rows_dropped": 8
+                    }
+                },
+                "rows_dropped": 8
+            },
+            {
+                "operation": "Duplicate Handling",
+                "duplicates_found": 0,
+                "duplicates_removed": 0
+            },
+            {
+                "operation": "Data Type Fixing",
+                "type_conversions": {
+                    "tmdbId": {
+                        "from": "float64",
+                        "to": "int64"
+                    }
+                }
+            }
+        ],
+        "final_rows": 9734,
+        "final_columns": 3,
+        "rows_dropped": 8
+    },
+    "tags": {
+        "dataset": "tags",
+        "original_rows": 3683,
+        "original_columns": 4,
+        "operations": [
+            {
+                "operation": "Missing Value Handling",
+                "missing_columns": {},
+                "rows_dropped": 0
+            },
+            {
+                "operation": "Duplicate Handling",
+                "duplicates_found": 0,
+                "duplicates_removed": 0
+            },
+            {
+                "operation": "Data Type Fixing",
+                "type_conversions": {}
+            }
+        ],
+        "final_rows": 3683,
+        "final_columns": 4,
+        "rows_dropped": 0
+    }
+}

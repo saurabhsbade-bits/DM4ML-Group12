@@ -32,7 +32,6 @@ airflow db init
 ```
 
 ### 3. Create Airflow Admin User
-
 ```bash
 airflow users create \
     --username admin \

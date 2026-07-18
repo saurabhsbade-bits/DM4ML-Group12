@@ -1,0 +1,21 @@
+
+        <html>
+        <head>
+            <title>Data Quality Report</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; }
+                h1 { color: #1f4788; }
+                h2 { color: #2c5aa0; margin-top: 30px; }
+                table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+                th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+                th { background-color: #2c5aa0; color: white; }
+                tr:nth-child(even) { background-color: #f2f2f2; }
+                .pass { color: green; font-weight: bold; }
+                .fail { color: red; font-weight: bold; }
+                .high { color: red; }
+                .medium { color: orange; }
+                .low { color: green; }
+            </style>
+        </head>
+        <body>
+        <h1>Data Quality Report</h1><p>Generated: 2026-07-18 22:13:50</p><h2>Executive Summary</h2><table><tr><th>Metric</th><th>Value</th></tr><tr><td>Total Datasets</td><td>4</td></tr><tr><td>Datasets Passed</td><td class='pass'>3</td></tr><tr><td>Datasets with Issues</td><td class='fail'>1</td></tr><tr><td>Total Issues</td><td>2</td></tr><tr><td>Average Quality Score</td><td>100.00%</td></tr></table><h2>Validation Results</h2><h3>movies - <span class='pass'>PASS</span></h3><table><tr><th>Check</th><th>Status</th><th>Details</th></tr><tr><td>schema</td><td class='pass'>PASS</td><td>All required columns present</td></tr><tr><td>missing_values</td><td class='pass'>PASS</td><td>No missing values detected</td></tr><tr><td>duplicates</td><td class='pass'>PASS</td><td>No duplicate rows detected</td></tr><tr><td>data_types</td><td class='pass'>PASS</td><td>All data types match schema</td></tr></table><h3>ratings - <span class='pass'>PASS</span></h3><table><tr><th>Check</th><th>Status</th><th>Details</th></tr><tr><td>schema</td><td class='pass'>PASS</td><td>All required columns present</td></tr><tr><td>missing_values</td><td class='pass'>PASS</td><td>No missing values detected</td></tr><tr><td>duplicates</td><td class='pass'>PASS</td><td>No duplicate rows detected</td></tr><tr><td>data_types</td><td class='pass'>PASS</td><td>All data types match schema</td></tr><tr><td>constraints</td><td class='pass'>PASS</td><td>All constraints satisfied</td></tr></table><h3>links - <span class='fail'>FAIL</span></h3><table><tr><th>Check</th><th>Status</th><th>Details</th></tr><tr><td>schema</td><td class='pass'>PASS</td><td>All required columns present</td></tr><tr><td>missing_values</td><td class='fail'>FAIL</td><td>Found 8 null values across columns</td></tr><tr><td>duplicates</td><td class='pass'>PASS</td><td>No duplicate rows detected</td></tr><tr><td>data_types</td><td class='fail'>FAIL</td><td>Data type mismatches found in 1 columns</td></tr></table><h3>tags - <span class='pass'>PASS</span></h3><table><tr><th>Check</th><th>Status</th><th>Details</th></tr><tr><td>schema</td><td class='pass'>PASS</td><td>All required columns present</td></tr><tr><td>missing_values</td><td class='pass'>PASS</td><td>No missing values detected</td></tr><tr><td>duplicates</td><td class='pass'>PASS</td><td>No duplicate rows detected</td></tr><tr><td>data_types</td><td class='pass'>PASS</td><td>All data types match schema</td></tr></table></body></html>

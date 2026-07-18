@@ -1,0 +1,308 @@
+{
+    "dataset_name": "products",
+    "basic_stats": {
+        "total_records": 30,
+        "total_fields": 22,
+        "fields": [
+            "id",
+            "title",
+            "description",
+            "category",
+            "price",
+            "discountPercentage",
+            "rating",
+            "stock",
+            "tags",
+            "brand",
+            "sku",
+            "weight",
+            "dimensions",
+            "warrantyInformation",
+            "shippingInformation",
+            "availabilityStatus",
+            "reviews",
+            "returnPolicy",
+            "minimumOrderQuantity",
+            "meta",
+            "images",
+            "thumbnail"
+        ],
+        "memory_usage_mb": 0.043483734130859375
+    },
+    "field_profiles": {
+        "id": {
+            "data_type": "int64",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0,
+            "unique_values": 30,
+            "unique_percentage": 100.0,
+            "min": 1.0,
+            "max": 30.0,
+            "mean": 15.5,
+            "median": 15.5,
+            "std": 8.803408430829505
+        },
+        "title": {
+            "data_type": "object",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0,
+            "unique_values": 30,
+            "unique_percentage": 100.0,
+            "top_values": {
+                "Essence Mascara Lash Princess": 1,
+                "Eyeshadow Palette with Mirror": 1,
+                "Powder Canister": 1,
+                "Red Lipstick": 1,
+                "Red Nail Polish": 1
+            }
+        },
+        "description": {
+            "data_type": "object",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0,
+            "unique_values": 30,
+            "unique_percentage": 100.0,
+            "top_values": {
+                "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.": 1,
+                "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.": 1,
+                "The Powder Canister is a finely milled setting powder designed to set makeup and control shine. With a lightweight and translucent formula, it provides a smooth and matte finish.": 1,
+                "The Red Lipstick is a classic and bold choice for adding a pop of color to your lips. With a creamy and pigmented formula, it provides a vibrant and long-lasting finish.": 1,
+                "The Red Nail Polish offers a rich and glossy red hue for vibrant and polished nails. With a quick-drying formula, it provides a salon-quality finish at home.": 1
+            }
+        },
+        "category": {
+            "data_type": "object",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0,
+            "unique_values": 4,
+            "unique_percentage": 13.333333333333334,
+            "top_values": {
+                "groceries": 15,
+                "beauty": 5,
+                "fragrances": 5,
+                "furniture": 5
+            }
+        },
+        "price": {
+            "data_type": "float64",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0,
+            "unique_values": 26,
+            "unique_percentage": 86.66666666666667,
+            "min": 0.99,
+            "max": 2499.99,
+            "mean": 219.24999999999994,
+            "median": 11.99,
+            "std": 570.4918329374013
+        },
+        "discountPercentage": {
+            "data_type": "float64",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0,
+            "unique_values": 28,
+            "unique_percentage": 93.33333333333333,
+            "min": 0.16,
+            "max": 19.09,
+            "mean": 9.839666666666668,
+            "median": 10.375,
+            "std": 5.456156587987892
+        },
+        "rating": {
+            "data_type": "float64",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0,
+            "unique_values": 30,
+            "unique_percentage": 100.0,
+            "min": 2.53,
+            "max": 4.93,
+            "mean": 3.8583333333333334,
+            "median": 3.95,
+            "std": 0.7146597132531863
+        },
+        "stock": {
+            "data_type": "int64",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0,
+            "unique_values": 27,
+            "unique_percentage": 90.0,
+            "min": 3.0,
+            "max": 99.0,
+            "mean": 54.93333333333333,
+            "median": 59.0,
+            "std": 33.81688349324051
+        },
+        "tags": {
+            "data_type": "complex_object",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0
+        },
+        "brand": {
+            "data_type": "object",
+            "non_null_count": "15",
+            "null_count": "15",
+            "null_percentage": 50.0,
+            "unique_values": 14,
+            "unique_percentage": 46.666666666666664,
+            "top_values": {
+                "Annibale Colombo": 2,
+                "Essence": 1,
+                "Velvet Touch": 1,
+                "Chic Cosmetics": 1,
+                "Nail Couture": 1
+            }
+        },
+        "sku": {
+            "data_type": "object",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0,
+            "unique_values": 30,
+            "unique_percentage": 100.0,
+            "top_values": {
+                "BEA-ESS-ESS-001": 1,
+                "BEA-GLA-EYE-002": 1,
+                "BEA-VEL-POW-003": 1,
+                "BEA-CHI-LIP-004": 1,
+                "BEA-NAI-NAI-005": 1
+            }
+        },
+        "weight": {
+            "data_type": "int64",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0,
+            "unique_values": 9,
+            "unique_percentage": 30.0,
+            "min": 1.0,
+            "max": 10.0,
+            "mean": 5.8,
+            "median": 6.0,
+            "std": 3.2313123201487084
+        },
+        "dimensions": {
+            "data_type": "complex_object",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0
+        },
+        "warrantyInformation": {
+            "data_type": "object",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0,
+            "unique_values": 10,
+            "unique_percentage": 33.33333333333333,
+            "top_values": {
+                "3 year warranty": 6,
+                "1 month warranty": 5,
+                "1 year warranty": 4,
+                "1 week warranty": 4,
+                "6 months warranty": 3
+            }
+        },
+        "shippingInformation": {
+            "data_type": "object",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0,
+            "unique_values": 6,
+            "unique_percentage": 20.0,
+            "top_values": {
+                "Ships overnight": 9,
+                "Ships in 1 week": 6,
+                "Ships in 1-2 business days": 5,
+                "Ships in 2 weeks": 4,
+                "Ships in 3-5 business days": 3
+            }
+        },
+        "availabilityStatus": {
+            "data_type": "object",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0,
+            "unique_values": 2,
+            "unique_percentage": 6.666666666666667,
+            "top_values": {
+                "In Stock": 27,
+                "Low Stock": 3
+            }
+        },
+        "reviews": {
+            "data_type": "complex_object",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0
+        },
+        "returnPolicy": {
+            "data_type": "object",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0,
+            "unique_values": 5,
+            "unique_percentage": 16.666666666666664,
+            "top_values": {
+                "No return policy": 10,
+                "7 days return policy": 9,
+                "60 days return policy": 5,
+                "90 days return policy": 3,
+                "30 days return policy": 3
+            }
+        },
+        "minimumOrderQuantity": {
+            "data_type": "int64",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0,
+            "unique_values": 22,
+            "unique_percentage": 73.33333333333333,
+            "min": 1.0,
+            "max": 50.0,
+            "mean": 21.533333333333335,
+            "median": 21.0,
+            "std": 17.57100537490833
+        },
+        "meta": {
+            "data_type": "complex_object",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0
+        },
+        "images": {
+            "data_type": "complex_object",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0
+        },
+        "thumbnail": {
+            "data_type": "object",
+            "non_null_count": "30",
+            "null_count": "0",
+            "null_percentage": 0.0,
+            "unique_values": 30,
+            "unique_percentage": 100.0,
+            "top_values": {
+                "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp": 1,
+                "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/thumbnail.webp": 1,
+                "https://cdn.dummyjson.com/product-images/beauty/powder-canister/thumbnail.webp": 1,
+                "https://cdn.dummyjson.com/product-images/beauty/red-lipstick/thumbnail.webp": 1,
+                "https://cdn.dummyjson.com/product-images/beauty/red-nail-polish/thumbnail.webp": 1
+            }
+        }
+    },
+    "data_quality": {
+        "total_cells": 660,
+        "null_cells": "15",
+        "filled_cells": "645",
+        "completeness_percentage": 97.72727272727273,
+        "quality_score": 97.72727272727273
+    }
+}

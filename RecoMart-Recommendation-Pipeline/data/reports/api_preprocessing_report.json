@@ -1,0 +1,88 @@
+{
+    "dataset": "products",
+    "original_columns": 22,
+    "encoding_operations": {
+        "brand": {
+            "method": "label_encoding",
+            "original_type": "object",
+            "unique_values": 15,
+            "mapping": {
+                "Annibale Colombo": "0",
+                "Bath Trends": "1",
+                "Calvin Klein": "2",
+                "Chanel": "3",
+                "Chic Cosmetics": "4",
+                "Dior": "5",
+                "Dolce & Gabbana": "6",
+                "Essence": "7",
+                "Furniture Co.": "8",
+                "Glamour Beauty": "9",
+                "Gucci": "10",
+                "Knoll": "11",
+                "Nail Couture": "12",
+                "Unknown": "13",
+                "Velvet Touch": "14"
+            },
+            "new_type": "int64"
+        },
+        "category": {
+            "method": "label_encoding",
+            "original_type": "object",
+            "unique_values": 4,
+            "mapping": {
+                "beauty": "0",
+                "fragrances": "1",
+                "furniture": "2",
+                "groceries": "3"
+            },
+            "new_type": "int64"
+        }
+    },
+    "normalization_operations": {
+        "price": {
+            "method": "minmax",
+            "original_min": 0.99,
+            "original_max": 2499.99,
+            "original_mean": 219.24999999999994,
+            "original_std": 570.4918329374013,
+            "normalized_min": 0.0,
+            "normalized_max": 1.0,
+            "normalized_mean": 0.08733893557422968,
+            "normalized_std": 0.2282880483943183
+        },
+        "rating": {
+            "method": "minmax",
+            "original_min": 2.53,
+            "original_max": 4.93,
+            "original_mean": 3.8583333333333334,
+            "original_std": 0.7146597132531863,
+            "normalized_min": 0.0,
+            "normalized_max": 1.0,
+            "normalized_mean": 0.5534722222222224,
+            "normalized_std": 0.29777488052216095
+        },
+        "discountPercentage": {
+            "method": "minmax",
+            "original_min": 0.16,
+            "original_max": 19.09,
+            "original_mean": 9.839666666666668,
+            "original_std": 5.456156587987892,
+            "normalized_min": 0.0,
+            "normalized_max": 1.0,
+            "normalized_mean": 0.5113400246522276,
+            "normalized_std": 0.288228028948119
+        },
+        "stock": {
+            "method": "minmax",
+            "original_min": 3.0,
+            "original_max": 99.0,
+            "original_mean": 54.93333333333333,
+            "original_std": 33.81688349324051,
+            "normalized_min": 0.0,
+            "normalized_max": 1.0,
+            "normalized_mean": 0.5409722222222222,
+            "normalized_std": 0.35225920305458863
+        }
+    },
+    "processed_columns": 22
+}
