@@ -11,8 +11,12 @@ Responsibilities:
 
 import logging
 from pathlib import Path
-from datetime import datetime
-from typing import Dict, Any
+from typing import Dict, Any, List
+
+from src.metadata.metadata_generator import MetadataGenerator
+from src.utils.helper import ensure_directory
+from .csv_ingestion import run_csv_ingestion
+from .api_ingestion import run_api_ingestion
 
 logger = logging.getLogger(__name__)
 
@@ -28,17 +32,23 @@ def ingest_csv_data(source_path: str, output_path: str) -> Dict[str, Any]:
     Returns:
         Dict with ingestion metadata and status
     """
-    logger.info(f"Starting CSV ingestion from {source_path}")
-    # TODO: Implement CSV ingestion logic
-    # - Read CSV files
-    # - Validate structure
-    # - Apply schema checks
-    # - Store in data/raw with timestamp partitioning
-    # - Return metadata
-    raise NotImplementedError("Member 1: Implement CSV ingestion")
+    logger.info(f"Starting CSV ingestion from source_path={source_path}")
+    output_dir = Path(output_path)
+    ensure_directory(output_dir)
+
+    metadata = MetadataGenerator()
+    run_csv_ingestion(metadata)
+    metadata.save()
+
+    return {
+        "status": "success",
+        "source_path": source_path,
+        "output_path": str(output_dir),
+        "metadata_file": str(Path(__file__).resolve().parents[2] / "data" / "metadata" / "ingestion_metadata.json"),
+    }
 
 
-def ingest_rest_api_data(api_endpoints: list, output_path: str) -> Dict[str, Any]:
+def ingest_rest_api_data(api_endpoints: List[str], output_path: str) -> Dict[str, Any]:
     """
     Ingest data from REST APIs.
     
@@ -49,14 +59,20 @@ def ingest_rest_api_data(api_endpoints: list, output_path: str) -> Dict[str, Any
     Returns:
         Dict with ingestion metadata and status
     """
-    logger.info(f"Starting REST API ingestion from {len(api_endpoints)} endpoints")
-    # TODO: Implement REST API ingestion logic
-    # - Make API calls with retries
-    # - Handle rate limiting
-    # - Validate API responses
-    # - Store JSON responses in data/raw
-    # - Return metadata
-    raise NotImplementedError("Member 1: Implement REST API ingestion")
+    logger.info(f"Starting REST API ingestion from api_endpoints={api_endpoints}")
+    output_dir = Path(output_path)
+    ensure_directory(output_dir)
+
+    metadata = MetadataGenerator()
+    run_api_ingestion(metadata)
+    metadata.save()
+
+    return {
+        "status": "success",
+        "api_endpoints": api_endpoints,
+        "output_path": str(output_dir),
+        "metadata_file": str(Path(__file__).resolve().parents[2] / "data" / "metadata" / "ingestion_metadata.json"),
+    }
 
 
 def ingest_data(output_path: str) -> Dict[str, Any]:
@@ -69,6 +85,18 @@ def ingest_data(output_path: str) -> Dict[str, Any]:
     Returns:
         Dict with combined ingestion results
     """
-    logger.info("Starting data ingestion pipeline")
-    # TODO: Call both CSV and API ingestion functions
-    raise NotImplementedError("Member 1: Implement main ingestion orchestrator")
+    logger.info(f"Starting data ingestion pipeline with output_path={output_path}")
+    output_dir = Path(output_path)
+    ensure_directory(output_dir)
+
+    metadata = MetadataGenerator()
+    run_csv_ingestion(metadata)
+    run_api_ingestion(metadata)
+    metadata.save()
+
+    return {
+        "status": "success",
+        "output_path": str(output_dir),
+        "metadata_file": str(Path(__file__).resolve().parents[2] / "data" / "metadata" / "ingestion_metadata.json"),
+        "ingested_sources": ["csv", "api"],
+    }

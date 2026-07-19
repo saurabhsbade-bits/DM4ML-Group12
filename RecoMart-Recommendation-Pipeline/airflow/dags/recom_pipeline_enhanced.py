@@ -11,11 +11,11 @@ This is an extended version of the main DAG with additional:
 from datetime import datetime, timedelta
 from pathlib import Path
 from airflow import DAG
-from airflow.operators.python import PythonOperator
-from airflow.utils.task_group import TaskGroup
+from airflow.providers.standard.operators.python import PythonOperator
+from airflow.sdk import TaskGroup
 import logging
 
-from monitoring import (
+from airflow.monitoring import (
     configure_logging,
     PipelineMonitor,
     task_failure_callback,
@@ -41,7 +41,6 @@ default_args = {
     "retry_delay": timedelta(minutes=5),
     "start_date": datetime(2026, 7, 15),
     "email_on_failure": False,
-    "provide_context": True,
 }
 
 
@@ -86,7 +85,7 @@ dag = DAG(
     dag_id=DAG_ID,
     default_args=default_args,
     description="RecoMart Pipeline Enhanced with Monitoring",
-    schedule_interval="0 2 * * 0",
+    schedule="0 2 * * 0",
     catchup=False,
     tags=["recom", "monitoring"],
 )
@@ -99,5 +98,4 @@ with dag:
         on_failure_callback=task_failure_callback,
         on_success_callback=task_success_callback,
         on_retry_callback=task_retry_callback,
-        provide_context=True,
     )

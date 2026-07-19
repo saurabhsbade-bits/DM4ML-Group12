@@ -8,6 +8,7 @@ Responsibilities:
 - Save and version trained models
 """
 
+
 import logging
 from pathlib import Path
 from typing import Dict, Any, Tuple, Optional
@@ -19,27 +20,55 @@ logger = logging.getLogger(__name__)
 def train_model(
     features_path: str,
     output_path: str,
-    model_type: str = "collaborative_filtering"
+    model_type: str = "collaborative_filtering",
 ) -> Dict[str, Any]:
+    """Simple model training placeholder.
+
+    Loads `features.csv` from `features_path`, trains a small
+    linear regression using `user_avg` and `item_avg` to predict
+    `rating`, saves the model and returns basic metrics (RMSE).
     """
-    Train recommendation model.
-    
-    Args:
-        features_path: Path to engineered features
-        output_path: Path to save trained model
-        model_type: Type of model ("collaborative_filtering" or "content_based")
-        
-    Returns:
-        Dict with model metadata and performance metrics
-    """
-    logger.info(f"Starting model training ({model_type}) from {features_path}")
-    # TODO: Implement model training
-    # - Load feature data
-    # - Split train/test sets
-    # - Train model (SVD/NMF for CF, or similarity-based for CB)
-    # - Save model to output_path
-    # - Return model info
-    raise NotImplementedError("Member 4: Implement model training")
+    from sklearn.linear_model import LinearRegression
+    from sklearn.model_selection import train_test_split
+    from sklearn.metrics import mean_squared_error
+    import joblib
+
+    feat_dir = Path(features_path)
+    out_dir = Path(output_path)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    features_file = feat_dir / "features.csv"
+    if not features_file.exists():
+        raise FileNotFoundError(f"features.csv not found in {feat_dir}")
+
+    df = pd.read_csv(features_file)
+
+    # Ensure required columns
+    for col in ["user_avg", "item_avg", "rating"]:
+        if col not in df.columns:
+            raise ValueError(f"Missing required column in features: {col}")
+
+    X = df[["user_avg", "item_avg"]].fillna(0)
+    y = df["rating"].fillna(df["rating"].mean())
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    model = LinearRegression()
+    model.fit(X_train, y_train)
+
+    preds = model.predict(X_test)
+    # Compute RMSE manually to avoid compatibility issues with sklearn versions
+    mse = ((y_test - preds) ** 2).mean()
+    rmse = float(mse ** 0.5)
+
+    model_file = out_dir / "baseline_model.joblib"
+    joblib.dump(model, model_file)
+
+    metrics = {"rmse": float(rmse), "train_rows": int(X_train.shape[0]), "test_rows": int(X_test.shape[0])}
+
+    logger.info(f"Model trained and persisted to {model_file} (RMSE={rmse:.4f})")
+
+    return {"status": "success", "model_path": str(model_file), "metrics": metrics}
 
 
 def evaluate_model(

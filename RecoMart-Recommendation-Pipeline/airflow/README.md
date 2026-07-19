@@ -146,8 +146,8 @@ airflow tasks list recom_pipeline
 
 ## TODO for Team Members
 
-- [ ] Member 1: Create scripts in `src/ingestion/` and update `task_data_ingestion()` 
+- [ ] Member 1: Create scripts in `src/ingestion/` and update `task_data_ingestion()`
 - [ ] Member 2: Create scripts in `src/validation/` and `src/preparation/`, update tasks
 - [ ] Member 3: Create scripts in `src/features/`, update `task_feature_engineering()` and `task_feature_store_setup()`
 - [ ] Member 4: Create scripts in `src/models/`, update `task_model_training()` with MLflow integration
-- [ ] Member 5: Finalize DAG, add monitoring, logging, API endpoints, and prepare documentation
+- [ ] Member 5: Finalize integration wrappers for ingestion/validation/preparation, validate Airflow DAG execution, and document remaining handoff steps

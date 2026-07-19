@@ -114,6 +114,14 @@ This guide helps team members understand:
   - Documentation layer
   - Ready for team member code commits
 
+## SECTION 1.5: MEMBER 5 REMAINING TASKS
+- [ ] Finalize `src/ingestion/__init__.py` integration wrapper and verify `ingest_data()` works end to end
+- [ ] Finalize `src/validation/__init__.py` and `src/preparation/__init__.py` wrappers to call existing implemented modules
+- [ ] Validate Airflow DAG execution through ingestion → validation → preparation
+- [ ] Keep Member 3 and Member 4 tasks as pending placeholders until their code is merged
+- [ ] Confirm monitoring/alert callbacks log task lifecycle events correctly
+- [ ] Update `docs/runbook.md` and this checklist with current integration status and handoff notes
+
 ---
 
 ## SECTION 2: MEMBER-SPECIFIC INTEGRATION TASKS
@@ -180,7 +188,7 @@ def ingest_data(output_path: str) -> Dict[str, Any]:
 - [ ] `data/raw/api/` - Sample API response files
 - [ ] `airflow/logs/ingestion_*.log` - Execution logs from Airflow
 - [ ] `docs/ingestion_guide.md` - Documentation of API endpoints and CSV format
-
+> Note: `src/ingestion/csv_ingestion.py` and `src/ingestion/api_ingestion.py` are already implemented. The remaining Member 5 work is to wire `src/ingestion/__init__.py` into the DAG and validate the end-to-end ingestion stage.
 **Integration Steps:**
 1. Edit `src/ingestion/__init__.py` with your implementation
 2. Update DAG if function signatures change
@@ -268,7 +276,7 @@ def generate_eda_report(data: pd.DataFrame, output_path: str) -> None:
 - [ ] `data/processed/prepared_data_*.csv` - Sample prepared dataset
 - [ ] `reports/data_quality_report_*.pdf` - Quality assurance report
 - [ ] `reports/eda_analysis_*.ipynb` - Jupyter notebook with EDA plots
-
+> Note: `src/validation/validation_pipeline.py`, `src/preparation/data_cleaner.py`, `src/preparation/data_preprocessor.py`, and `src/preparation/exploratory_analysis.py` are already implemented. Member 5 should integrate these components and ensure `airflow/dags/recom_pipeline.py` calls the wrapper functions correctly.
 **Integration Steps:**
 1. Edit `src/validation/__init__.py` and `src/preparation/__init__.py`
 2. Test locally with sample data first

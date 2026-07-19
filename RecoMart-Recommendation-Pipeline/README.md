@@ -199,6 +199,39 @@ Pipeline Completed
 
 # 📦 Raw Data Storage
 
+---
+
+**Integration Status**
+
+- **Ingestion (Member 1):** Validated — CSV and API ingestion run successfully and metadata saved to `data/metadata/ingestion_metadata.json`.
+- **Validation & Preparation (Member 2):** Validated — validation reports and EDA generated; prepared data saved in `data/processed`.
+- **Feature Engineering (Member 3):** Minimal working placeholder implemented (`src/features`) that produces `data/features/features.csv`.
+- **Model Training (Member 4):** Minimal working placeholder implemented (`src/models`) that trains and persists a baseline model at `models/baseline_model.joblib`.
+- **Member 5 Integration:** Verified integration of ingestion/validation/preparation wrappers (Member 5 wiring validated).
+
+Quick local E2E (developer):
+
+Windows PowerShell:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r ci-requirements.txt
+python scripts/run_e2e.py
+```
+
+macOS / Linux:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r ci-requirements.txt
+python scripts/run_e2e.py
+```
+
+CI: A lightweight GitHub Actions workflow is provided at `.github/workflows/e2e.yml` which installs `ci-requirements.txt` and runs `scripts/run_e2e.py` as an end-to-end smoke test.
+
+
 CSV datasets are stored using timestamp-based partitioning.
 
 Example

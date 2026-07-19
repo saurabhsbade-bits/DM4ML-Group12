@@ -830,3 +830,473 @@
 2026-07-19 03:30:42,099 | INFO | Preprocessing completed for products
 2026-07-19 03:30:45,347 | INFO | Saved distribution plot: f:\DM4MLPROJECT\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\plots\products_distributions.png
 2026-07-19 03:30:46,118 | INFO | Saved heatmap: f:\DM4MLPROJECT\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\plots\products_heatmap.png
+2026-07-19 19:18:13,313 | INFO | generated new fontManager
+2026-07-19 19:21:02,535 | INFO | Starting data validation from c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw
+2026-07-19 19:21:02,540 | INFO | ================================================================================
+2026-07-19 19:21:02,540 | INFO | DATA VALIDATION PIPELINE STARTED
+2026-07-19 19:21:02,540 | INFO | ================================================================================
+2026-07-19 19:21:02,541 | INFO | Starting validation for movies
+2026-07-19 19:21:02,576 | INFO | Validation completed for movies: FAIL (3/4 checks passed)
+2026-07-19 19:21:02,577 | INFO | Starting validation for ratings
+2026-07-19 19:21:02,626 | INFO | Validation completed for ratings: PASS (5/5 checks passed)
+2026-07-19 19:21:02,626 | INFO | Starting validation for links
+2026-07-19 19:21:02,636 | INFO | Validation completed for links: FAIL (2/4 checks passed)
+2026-07-19 19:21:02,636 | INFO | Starting validation for tags
+2026-07-19 19:21:02,641 | INFO | Validation completed for tags: FAIL (3/4 checks passed)
+2026-07-19 19:21:02,641 | INFO | ================================================================================
+2026-07-19 19:21:02,641 | INFO | VALIDATION PHASE COMPLETED
+2026-07-19 19:21:02,642 | INFO | ================================================================================
+2026-07-19 19:21:02,642 | INFO | ================================================================================
+2026-07-19 19:21:02,642 | INFO | DATA PROFILING PHASE STARTED
+2026-07-19 19:21:02,642 | INFO | ================================================================================
+2026-07-19 19:21:02,642 | INFO | Profiling dataset: movies
+2026-07-19 19:21:02,686 | INFO | Profile generated for movies
+2026-07-19 19:21:02,686 | INFO | Profiling dataset: ratings
+2026-07-19 19:21:02,779 | INFO | Profile generated for ratings
+2026-07-19 19:21:02,780 | INFO | Profiling dataset: links
+2026-07-19 19:21:02,794 | INFO | Profile generated for links
+2026-07-19 19:21:02,794 | INFO | Profiling dataset: tags
+2026-07-19 19:21:02,809 | INFO | Profile generated for tags
+2026-07-19 19:21:02,809 | INFO | ================================================================================
+2026-07-19 19:21:02,810 | INFO | DATA PROFILING PHASE COMPLETED
+2026-07-19 19:21:02,810 | INFO | ================================================================================
+2026-07-19 19:21:02,810 | INFO | ================================================================================
+2026-07-19 19:21:02,810 | INFO | REPORT GENERATION STARTED
+2026-07-19 19:21:02,810 | INFO | ================================================================================
+2026-07-19 19:21:02,810 | INFO | Generating PDF report: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\DataQualityReport_20260719_192102.pdf
+2026-07-19 19:21:02,840 | INFO | Report successfully generated: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\DataQualityReport_20260719_192102.pdf
+2026-07-19 19:21:02,841 | INFO | ================================================================================
+2026-07-19 19:21:02,841 | INFO | REPORT GENERATION COMPLETED
+2026-07-19 19:21:02,841 | INFO | ================================================================================
+2026-07-19 19:21:02,844 | INFO | Validation results saved to: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\validation_results.json
+2026-07-19 19:21:02,844 | INFO | Report generated at: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\DataQualityReport_20260719_192102.pdf
+2026-07-19 19:21:02,844 | INFO | Starting data preparation from c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw
+2026-07-19 19:21:02,850 | INFO | Cleaning dataset: movies
+2026-07-19 19:21:02,864 | INFO | Cleaning completed for movies: 0 rows dropped
+2026-07-19 19:21:02,864 | INFO | Preprocessing dataset: movies
+2026-07-19 19:21:03,156 | INFO | Preprocessing completed for movies
+2026-07-19 19:21:03,184 | INFO | Cleaning dataset: ratings
+2026-07-19 19:21:03,236 | INFO | Cleaning completed for ratings: 0 rows dropped
+2026-07-19 19:21:03,236 | INFO | Preprocessing dataset: ratings
+2026-07-19 19:21:03,257 | INFO | Preprocessing completed for ratings
+2026-07-19 19:21:03,637 | INFO | Cleaning dataset: links
+2026-07-19 19:21:03,646 | INFO | Cleaning completed for links: 8 rows dropped
+2026-07-19 19:21:03,646 | INFO | Preprocessing dataset: links
+2026-07-19 19:21:03,655 | INFO | Preprocessing completed for links
+2026-07-19 19:21:03,686 | INFO | Cleaning dataset: tags
+2026-07-19 19:21:03,691 | INFO | Cleaning completed for tags: 0 rows dropped
+2026-07-19 19:21:03,691 | INFO | Preprocessing dataset: tags
+2026-07-19 19:21:03,703 | INFO | Preprocessing completed for tags
+2026-07-19 19:21:03,741 | INFO | Preparation summary saved to c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\processed\preparation_summary.json
+2026-07-19 20:03:33,144 | INFO | Starting data ingestion pipeline with output_path=c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw
+2026-07-19 20:03:33,145 | INFO | ================================================================================
+2026-07-19 20:03:33,145 | INFO | CSV INGESTION STARTED
+2026-07-19 20:03:33,145 | INFO | ================================================================================
+2026-07-19 20:03:33,145 | INFO | ============================================================
+2026-07-19 20:03:33,145 | INFO | Starting ingestion : movies
+2026-07-19 20:03:33,198 | INFO | Source      : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\movies.csv
+2026-07-19 20:03:33,198 | INFO | Destination : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\movies\2026\07\19\200333\movies.csv
+2026-07-19 20:03:33,198 | INFO | Status      : SUCCESS
+2026-07-19 20:03:33,198 | INFO | Completed ingestion : movies
+2026-07-19 20:03:33,198 | INFO | ============================================================
+2026-07-19 20:03:33,199 | INFO | ============================================================
+2026-07-19 20:03:33,199 | INFO | Starting ingestion : ratings
+2026-07-19 20:03:33,280 | INFO | Source      : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\ratings.csv
+2026-07-19 20:03:33,280 | INFO | Destination : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\ratings\2026\07\19\200333\ratings.csv
+2026-07-19 20:03:33,280 | INFO | Status      : SUCCESS
+2026-07-19 20:03:33,280 | INFO | Completed ingestion : ratings
+2026-07-19 20:03:33,280 | INFO | ============================================================
+2026-07-19 20:03:33,280 | INFO | ============================================================
+2026-07-19 20:03:33,280 | INFO | Starting ingestion : links
+2026-07-19 20:03:33,326 | INFO | Source      : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\links.csv
+2026-07-19 20:03:33,326 | INFO | Destination : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\links\2026\07\19\200333\links.csv
+2026-07-19 20:03:33,326 | INFO | Status      : SUCCESS
+2026-07-19 20:03:33,326 | INFO | Completed ingestion : links
+2026-07-19 20:03:33,326 | INFO | ============================================================
+2026-07-19 20:03:33,326 | INFO | ============================================================
+2026-07-19 20:03:33,326 | INFO | Starting ingestion : tags
+2026-07-19 20:03:33,356 | INFO | Source      : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\tags.csv
+2026-07-19 20:03:33,356 | INFO | Destination : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\tags\2026\07\19\200333\tags.csv
+2026-07-19 20:03:33,356 | INFO | Status      : SUCCESS
+2026-07-19 20:03:33,356 | INFO | Completed ingestion : tags
+2026-07-19 20:03:33,356 | INFO | ============================================================
+2026-07-19 20:03:33,356 | INFO | ================================================================================
+2026-07-19 20:03:33,356 | INFO | CSV INGESTION COMPLETED
+2026-07-19 20:03:33,356 | INFO | ================================================================================
+2026-07-19 20:03:33,356 | INFO | ================================================================================
+2026-07-19 20:03:33,357 | INFO | API INGESTION STARTED
+2026-07-19 20:03:33,357 | INFO | ================================================================================
+2026-07-19 20:03:33,357 | INFO | API Request Attempt 1
+2026-07-19 20:03:34,447 | INFO | API data stored at C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\api\products\2026\07\19\200334\products.json
+2026-07-19 20:03:34,447 | INFO | ================================================================================
+2026-07-19 20:03:34,447 | INFO | API INGESTION COMPLETED
+2026-07-19 20:03:34,447 | INFO | ================================================================================
+2026-07-19 20:03:34,448 | INFO | Metadata saved -> C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\metadata\ingestion_metadata.json
+2026-07-19 20:03:34,448 | INFO | Starting data validation from c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw
+2026-07-19 20:03:34,456 | INFO | ================================================================================
+2026-07-19 20:03:34,456 | INFO | DATA VALIDATION PIPELINE STARTED
+2026-07-19 20:03:34,456 | INFO | ================================================================================
+2026-07-19 20:03:34,457 | INFO | Starting validation for movies
+2026-07-19 20:03:34,478 | INFO | Validation completed for movies: FAIL (3/4 checks passed)
+2026-07-19 20:03:34,478 | INFO | Starting validation for ratings
+2026-07-19 20:03:34,558 | INFO | Validation completed for ratings: PASS (5/5 checks passed)
+2026-07-19 20:03:34,559 | INFO | Starting validation for links
+2026-07-19 20:03:34,570 | INFO | Validation completed for links: FAIL (2/4 checks passed)
+2026-07-19 20:03:34,570 | INFO | Starting validation for tags
+2026-07-19 20:03:34,579 | INFO | Validation completed for tags: FAIL (3/4 checks passed)
+2026-07-19 20:03:34,579 | INFO | ================================================================================
+2026-07-19 20:03:34,579 | INFO | VALIDATION PHASE COMPLETED
+2026-07-19 20:03:34,579 | INFO | ================================================================================
+2026-07-19 20:03:34,579 | INFO | ================================================================================
+2026-07-19 20:03:34,579 | INFO | DATA PROFILING PHASE STARTED
+2026-07-19 20:03:34,579 | INFO | ================================================================================
+2026-07-19 20:03:34,579 | INFO | Profiling dataset: movies
+2026-07-19 20:03:34,663 | INFO | Profile generated for movies
+2026-07-19 20:03:34,664 | INFO | Profiling dataset: ratings
+2026-07-19 20:03:34,797 | INFO | Profile generated for ratings
+2026-07-19 20:03:34,797 | INFO | Profiling dataset: links
+2026-07-19 20:03:34,821 | INFO | Profile generated for links
+2026-07-19 20:03:34,821 | INFO | Profiling dataset: tags
+2026-07-19 20:03:34,844 | INFO | Profile generated for tags
+2026-07-19 20:03:34,844 | INFO | ================================================================================
+2026-07-19 20:03:34,844 | INFO | DATA PROFILING PHASE COMPLETED
+2026-07-19 20:03:34,844 | INFO | ================================================================================
+2026-07-19 20:03:34,844 | INFO | ================================================================================
+2026-07-19 20:03:34,845 | INFO | REPORT GENERATION STARTED
+2026-07-19 20:03:34,845 | INFO | ================================================================================
+2026-07-19 20:03:34,845 | INFO | Generating PDF report: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\DataQualityReport_20260719_200334.pdf
+2026-07-19 20:03:34,891 | INFO | Report successfully generated: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\DataQualityReport_20260719_200334.pdf
+2026-07-19 20:03:34,891 | INFO | ================================================================================
+2026-07-19 20:03:34,891 | INFO | REPORT GENERATION COMPLETED
+2026-07-19 20:03:34,891 | INFO | ================================================================================
+2026-07-19 20:03:34,894 | INFO | Validation results saved to: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\validation_results.json
+2026-07-19 20:03:34,894 | INFO | Report generated at: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\DataQualityReport_20260719_200334.pdf
+2026-07-19 20:03:34,895 | INFO | Starting data preparation from c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw
+2026-07-19 20:03:34,903 | INFO | Cleaning dataset: movies
+2026-07-19 20:03:34,926 | INFO | Cleaning completed for movies: 0 rows dropped
+2026-07-19 20:03:34,926 | INFO | Preprocessing dataset: movies
+2026-07-19 20:03:35,399 | INFO | Preprocessing completed for movies
+2026-07-19 20:03:35,441 | INFO | Cleaning dataset: ratings
+2026-07-19 20:03:35,521 | INFO | Cleaning completed for ratings: 0 rows dropped
+2026-07-19 20:03:35,521 | INFO | Preprocessing dataset: ratings
+2026-07-19 20:03:35,551 | INFO | Preprocessing completed for ratings
+2026-07-19 20:03:36,179 | INFO | Cleaning dataset: links
+2026-07-19 20:03:36,192 | INFO | Cleaning completed for links: 8 rows dropped
+2026-07-19 20:03:36,192 | INFO | Preprocessing dataset: links
+2026-07-19 20:03:36,201 | INFO | Preprocessing completed for links
+2026-07-19 20:03:36,248 | INFO | Cleaning dataset: tags
+2026-07-19 20:03:36,256 | INFO | Cleaning completed for tags: 0 rows dropped
+2026-07-19 20:03:36,257 | INFO | Preprocessing dataset: tags
+2026-07-19 20:03:36,273 | INFO | Preprocessing completed for tags
+2026-07-19 20:03:36,330 | INFO | Preparation summary saved to c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\processed\preparation_summary.json
+2026-07-19 20:52:55,518 | INFO | Starting data ingestion pipeline with output_path=c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw
+2026-07-19 20:52:55,519 | INFO | ================================================================================
+2026-07-19 20:52:55,520 | INFO | CSV INGESTION STARTED
+2026-07-19 20:52:55,520 | INFO | ================================================================================
+2026-07-19 20:52:55,520 | INFO | ============================================================
+2026-07-19 20:52:55,520 | INFO | Starting ingestion : movies
+2026-07-19 20:52:55,546 | INFO | Source      : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\movies.csv
+2026-07-19 20:52:55,546 | INFO | Destination : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\movies\2026\07\19\205255\movies.csv
+2026-07-19 20:52:55,546 | INFO | Status      : SUCCESS
+2026-07-19 20:52:55,546 | INFO | Completed ingestion : movies
+2026-07-19 20:52:55,546 | INFO | ============================================================
+2026-07-19 20:52:55,546 | INFO | ============================================================
+2026-07-19 20:52:55,546 | INFO | Starting ingestion : ratings
+2026-07-19 20:52:55,590 | INFO | Source      : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\ratings.csv
+2026-07-19 20:52:55,590 | INFO | Destination : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\ratings\2026\07\19\205255\ratings.csv
+2026-07-19 20:52:55,590 | INFO | Status      : SUCCESS
+2026-07-19 20:52:55,591 | INFO | Completed ingestion : ratings
+2026-07-19 20:52:55,591 | INFO | ============================================================
+2026-07-19 20:52:55,591 | INFO | ============================================================
+2026-07-19 20:52:55,591 | INFO | Starting ingestion : links
+2026-07-19 20:52:55,607 | INFO | Source      : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\links.csv
+2026-07-19 20:52:55,607 | INFO | Destination : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\links\2026\07\19\205255\links.csv
+2026-07-19 20:52:55,607 | INFO | Status      : SUCCESS
+2026-07-19 20:52:55,607 | INFO | Completed ingestion : links
+2026-07-19 20:52:55,607 | INFO | ============================================================
+2026-07-19 20:52:55,607 | INFO | ============================================================
+2026-07-19 20:52:55,607 | INFO | Starting ingestion : tags
+2026-07-19 20:52:55,619 | INFO | Source      : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\tags.csv
+2026-07-19 20:52:55,620 | INFO | Destination : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\tags\2026\07\19\205255\tags.csv
+2026-07-19 20:52:55,620 | INFO | Status      : SUCCESS
+2026-07-19 20:52:55,620 | INFO | Completed ingestion : tags
+2026-07-19 20:52:55,620 | INFO | ============================================================
+2026-07-19 20:52:55,620 | INFO | ================================================================================
+2026-07-19 20:52:55,620 | INFO | CSV INGESTION COMPLETED
+2026-07-19 20:52:55,620 | INFO | ================================================================================
+2026-07-19 20:52:55,620 | INFO | ================================================================================
+2026-07-19 20:52:55,620 | INFO | API INGESTION STARTED
+2026-07-19 20:52:55,620 | INFO | ================================================================================
+2026-07-19 20:52:55,620 | INFO | API Request Attempt 1
+2026-07-19 20:52:56,160 | INFO | API data stored at C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\api\products\2026\07\19\205256\products.json
+2026-07-19 20:52:56,160 | INFO | ================================================================================
+2026-07-19 20:52:56,160 | INFO | API INGESTION COMPLETED
+2026-07-19 20:52:56,160 | INFO | ================================================================================
+2026-07-19 20:52:56,161 | INFO | Metadata saved -> C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\metadata\ingestion_metadata.json
+2026-07-19 20:52:56,161 | INFO | Starting data validation from c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw
+2026-07-19 20:52:56,167 | INFO | ================================================================================
+2026-07-19 20:52:56,167 | INFO | DATA VALIDATION PIPELINE STARTED
+2026-07-19 20:52:56,168 | INFO | ================================================================================
+2026-07-19 20:52:56,168 | INFO | Starting validation for movies
+2026-07-19 20:52:56,178 | INFO | Validation completed for movies: FAIL (3/4 checks passed)
+2026-07-19 20:52:56,178 | INFO | Starting validation for ratings
+2026-07-19 20:52:56,220 | INFO | Validation completed for ratings: PASS (5/5 checks passed)
+2026-07-19 20:52:56,220 | INFO | Starting validation for links
+2026-07-19 20:52:56,225 | INFO | Validation completed for links: FAIL (2/4 checks passed)
+2026-07-19 20:52:56,225 | INFO | Starting validation for tags
+2026-07-19 20:52:56,228 | INFO | Validation completed for tags: FAIL (3/4 checks passed)
+2026-07-19 20:52:56,229 | INFO | ================================================================================
+2026-07-19 20:52:56,229 | INFO | VALIDATION PHASE COMPLETED
+2026-07-19 20:52:56,229 | INFO | ================================================================================
+2026-07-19 20:52:56,229 | INFO | ================================================================================
+2026-07-19 20:52:56,229 | INFO | DATA PROFILING PHASE STARTED
+2026-07-19 20:52:56,229 | INFO | ================================================================================
+2026-07-19 20:52:56,229 | INFO | Profiling dataset: movies
+2026-07-19 20:52:56,266 | INFO | Profile generated for movies
+2026-07-19 20:52:56,267 | INFO | Profiling dataset: ratings
+2026-07-19 20:52:56,339 | INFO | Profile generated for ratings
+2026-07-19 20:52:56,339 | INFO | Profiling dataset: links
+2026-07-19 20:52:56,353 | INFO | Profile generated for links
+2026-07-19 20:52:56,353 | INFO | Profiling dataset: tags
+2026-07-19 20:52:56,366 | INFO | Profile generated for tags
+2026-07-19 20:52:56,366 | INFO | ================================================================================
+2026-07-19 20:52:56,366 | INFO | DATA PROFILING PHASE COMPLETED
+2026-07-19 20:52:56,366 | INFO | ================================================================================
+2026-07-19 20:52:56,366 | INFO | ================================================================================
+2026-07-19 20:52:56,366 | INFO | REPORT GENERATION STARTED
+2026-07-19 20:52:56,366 | INFO | ================================================================================
+2026-07-19 20:52:56,367 | INFO | Generating PDF report: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\DataQualityReport_20260719_205256.pdf
+2026-07-19 20:52:56,391 | INFO | Report successfully generated: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\DataQualityReport_20260719_205256.pdf
+2026-07-19 20:52:56,391 | INFO | ================================================================================
+2026-07-19 20:52:56,391 | INFO | REPORT GENERATION COMPLETED
+2026-07-19 20:52:56,391 | INFO | ================================================================================
+2026-07-19 20:52:56,392 | INFO | Validation results saved to: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\validation_results.json
+2026-07-19 20:52:56,392 | INFO | Report generated at: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\DataQualityReport_20260719_205256.pdf
+2026-07-19 20:52:56,393 | INFO | Starting data preparation from c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw
+2026-07-19 20:52:56,397 | INFO | Cleaning dataset: movies
+2026-07-19 20:52:56,411 | INFO | Cleaning completed for movies: 0 rows dropped
+2026-07-19 20:52:56,411 | INFO | Preprocessing dataset: movies
+2026-07-19 20:52:56,476 | INFO | Preprocessing completed for movies
+2026-07-19 20:52:56,493 | INFO | Cleaning dataset: ratings
+2026-07-19 20:52:56,541 | INFO | Cleaning completed for ratings: 0 rows dropped
+2026-07-19 20:52:56,541 | INFO | Preprocessing dataset: ratings
+2026-07-19 20:52:56,557 | INFO | Preprocessing completed for ratings
+2026-07-19 20:52:57,035 | INFO | Cleaning dataset: links
+2026-07-19 20:52:57,043 | INFO | Cleaning completed for links: 8 rows dropped
+2026-07-19 20:52:57,043 | INFO | Preprocessing dataset: links
+2026-07-19 20:52:57,052 | INFO | Preprocessing completed for links
+2026-07-19 20:52:57,089 | INFO | Cleaning dataset: tags
+2026-07-19 20:52:57,094 | INFO | Cleaning completed for tags: 0 rows dropped
+2026-07-19 20:52:57,095 | INFO | Preprocessing dataset: tags
+2026-07-19 20:52:57,106 | INFO | Preprocessing completed for tags
+2026-07-19 20:52:57,147 | INFO | Preparation summary saved to c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\processed\preparation_summary.json
+2026-07-19 20:52:57,153 | INFO | Starting feature engineering from c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\processed
+2026-07-19 20:52:57,839 | INFO | Features saved to c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\features\features.csv (100836 rows)
+2026-07-19 20:53:33,778 | INFO | Starting data ingestion pipeline with output_path=c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw
+2026-07-19 20:53:33,779 | INFO | ================================================================================
+2026-07-19 20:53:33,779 | INFO | CSV INGESTION STARTED
+2026-07-19 20:53:33,779 | INFO | ================================================================================
+2026-07-19 20:53:33,779 | INFO | ============================================================
+2026-07-19 20:53:33,779 | INFO | Starting ingestion : movies
+2026-07-19 20:53:33,802 | INFO | Source      : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\movies.csv
+2026-07-19 20:53:33,802 | INFO | Destination : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\movies\2026\07\19\205333\movies.csv
+2026-07-19 20:53:33,802 | INFO | Status      : SUCCESS
+2026-07-19 20:53:33,802 | INFO | Completed ingestion : movies
+2026-07-19 20:53:33,802 | INFO | ============================================================
+2026-07-19 20:53:33,802 | INFO | ============================================================
+2026-07-19 20:53:33,803 | INFO | Starting ingestion : ratings
+2026-07-19 20:53:33,844 | INFO | Source      : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\ratings.csv
+2026-07-19 20:53:33,844 | INFO | Destination : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\ratings\2026\07\19\205333\ratings.csv
+2026-07-19 20:53:33,844 | INFO | Status      : SUCCESS
+2026-07-19 20:53:33,844 | INFO | Completed ingestion : ratings
+2026-07-19 20:53:33,844 | INFO | ============================================================
+2026-07-19 20:53:33,845 | INFO | ============================================================
+2026-07-19 20:53:33,845 | INFO | Starting ingestion : links
+2026-07-19 20:53:33,871 | INFO | Source      : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\links.csv
+2026-07-19 20:53:33,871 | INFO | Destination : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\links\2026\07\19\205333\links.csv
+2026-07-19 20:53:33,871 | INFO | Status      : SUCCESS
+2026-07-19 20:53:33,871 | INFO | Completed ingestion : links
+2026-07-19 20:53:33,871 | INFO | ============================================================
+2026-07-19 20:53:33,872 | INFO | ============================================================
+2026-07-19 20:53:33,872 | INFO | Starting ingestion : tags
+2026-07-19 20:53:33,885 | INFO | Source      : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\tags.csv
+2026-07-19 20:53:33,885 | INFO | Destination : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\tags\2026\07\19\205333\tags.csv
+2026-07-19 20:53:33,885 | INFO | Status      : SUCCESS
+2026-07-19 20:53:33,885 | INFO | Completed ingestion : tags
+2026-07-19 20:53:33,885 | INFO | ============================================================
+2026-07-19 20:53:33,885 | INFO | ================================================================================
+2026-07-19 20:53:33,885 | INFO | CSV INGESTION COMPLETED
+2026-07-19 20:53:33,885 | INFO | ================================================================================
+2026-07-19 20:53:33,885 | INFO | ================================================================================
+2026-07-19 20:53:33,885 | INFO | API INGESTION STARTED
+2026-07-19 20:53:33,885 | INFO | ================================================================================
+2026-07-19 20:53:33,885 | INFO | API Request Attempt 1
+2026-07-19 20:53:34,425 | INFO | API data stored at C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\api\products\2026\07\19\205334\products.json
+2026-07-19 20:53:34,425 | INFO | ================================================================================
+2026-07-19 20:53:34,425 | INFO | API INGESTION COMPLETED
+2026-07-19 20:53:34,425 | INFO | ================================================================================
+2026-07-19 20:53:34,426 | INFO | Metadata saved -> C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\metadata\ingestion_metadata.json
+2026-07-19 20:53:34,426 | INFO | Starting data validation from c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw
+2026-07-19 20:53:34,433 | INFO | ================================================================================
+2026-07-19 20:53:34,433 | INFO | DATA VALIDATION PIPELINE STARTED
+2026-07-19 20:53:34,433 | INFO | ================================================================================
+2026-07-19 20:53:34,433 | INFO | Starting validation for movies
+2026-07-19 20:53:34,444 | INFO | Validation completed for movies: FAIL (3/4 checks passed)
+2026-07-19 20:53:34,444 | INFO | Starting validation for ratings
+2026-07-19 20:53:34,483 | INFO | Validation completed for ratings: PASS (5/5 checks passed)
+2026-07-19 20:53:34,483 | INFO | Starting validation for links
+2026-07-19 20:53:34,489 | INFO | Validation completed for links: FAIL (2/4 checks passed)
+2026-07-19 20:53:34,489 | INFO | Starting validation for tags
+2026-07-19 20:53:34,493 | INFO | Validation completed for tags: FAIL (3/4 checks passed)
+2026-07-19 20:53:34,493 | INFO | ================================================================================
+2026-07-19 20:53:34,493 | INFO | VALIDATION PHASE COMPLETED
+2026-07-19 20:53:34,493 | INFO | ================================================================================
+2026-07-19 20:53:34,493 | INFO | ================================================================================
+2026-07-19 20:53:34,493 | INFO | DATA PROFILING PHASE STARTED
+2026-07-19 20:53:34,493 | INFO | ================================================================================
+2026-07-19 20:53:34,493 | INFO | Profiling dataset: movies
+2026-07-19 20:53:34,527 | INFO | Profile generated for movies
+2026-07-19 20:53:34,527 | INFO | Profiling dataset: ratings
+2026-07-19 20:53:34,601 | INFO | Profile generated for ratings
+2026-07-19 20:53:34,602 | INFO | Profiling dataset: links
+2026-07-19 20:53:34,615 | INFO | Profile generated for links
+2026-07-19 20:53:34,615 | INFO | Profiling dataset: tags
+2026-07-19 20:53:34,628 | INFO | Profile generated for tags
+2026-07-19 20:53:34,628 | INFO | ================================================================================
+2026-07-19 20:53:34,628 | INFO | DATA PROFILING PHASE COMPLETED
+2026-07-19 20:53:34,628 | INFO | ================================================================================
+2026-07-19 20:53:34,628 | INFO | ================================================================================
+2026-07-19 20:53:34,628 | INFO | REPORT GENERATION STARTED
+2026-07-19 20:53:34,629 | INFO | ================================================================================
+2026-07-19 20:53:34,629 | INFO | Generating PDF report: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\DataQualityReport_20260719_205334.pdf
+2026-07-19 20:53:34,655 | INFO | Report successfully generated: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\DataQualityReport_20260719_205334.pdf
+2026-07-19 20:53:34,655 | INFO | ================================================================================
+2026-07-19 20:53:34,655 | INFO | REPORT GENERATION COMPLETED
+2026-07-19 20:53:34,655 | INFO | ================================================================================
+2026-07-19 20:53:34,657 | INFO | Validation results saved to: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\validation_results.json
+2026-07-19 20:53:34,657 | INFO | Report generated at: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\DataQualityReport_20260719_205334.pdf
+2026-07-19 20:53:34,657 | INFO | Starting data preparation from c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw
+2026-07-19 20:53:34,662 | INFO | Cleaning dataset: movies
+2026-07-19 20:53:34,675 | INFO | Cleaning completed for movies: 0 rows dropped
+2026-07-19 20:53:34,675 | INFO | Preprocessing dataset: movies
+2026-07-19 20:53:34,735 | INFO | Preprocessing completed for movies
+2026-07-19 20:53:34,752 | INFO | Cleaning dataset: ratings
+2026-07-19 20:53:34,801 | INFO | Cleaning completed for ratings: 0 rows dropped
+2026-07-19 20:53:34,802 | INFO | Preprocessing dataset: ratings
+2026-07-19 20:53:34,821 | INFO | Preprocessing completed for ratings
+2026-07-19 20:53:35,222 | INFO | Cleaning dataset: links
+2026-07-19 20:53:35,232 | INFO | Cleaning completed for links: 8 rows dropped
+2026-07-19 20:53:35,232 | INFO | Preprocessing dataset: links
+2026-07-19 20:53:35,238 | INFO | Preprocessing completed for links
+2026-07-19 20:53:35,271 | INFO | Cleaning dataset: tags
+2026-07-19 20:53:35,276 | INFO | Cleaning completed for tags: 0 rows dropped
+2026-07-19 20:53:35,276 | INFO | Preprocessing dataset: tags
+2026-07-19 20:53:35,287 | INFO | Preprocessing completed for tags
+2026-07-19 20:53:35,326 | INFO | Preparation summary saved to c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\processed\preparation_summary.json
+2026-07-19 20:53:35,330 | INFO | Starting feature engineering from c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\processed
+2026-07-19 20:53:35,909 | INFO | Features saved to c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\features\features.csv (100836 rows)
+2026-07-19 20:53:36,060 | INFO | Model trained and persisted to c:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\models\baseline_model.joblib (RMSE=0.1806)
+2026-07-19 20:56:14,555 | INFO | Starting data ingestion pipeline with output_path=C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw
+2026-07-19 20:56:14,555 | INFO | ================================================================================
+2026-07-19 20:56:14,555 | INFO | CSV INGESTION STARTED
+2026-07-19 20:56:14,555 | INFO | ================================================================================
+2026-07-19 20:56:14,556 | INFO | ============================================================
+2026-07-19 20:56:14,556 | INFO | Starting ingestion : movies
+2026-07-19 20:56:14,580 | INFO | Source      : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\movies.csv
+2026-07-19 20:56:14,580 | INFO | Destination : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\movies\2026\07\19\205614\movies.csv
+2026-07-19 20:56:14,580 | INFO | Status      : SUCCESS
+2026-07-19 20:56:14,580 | INFO | Completed ingestion : movies
+2026-07-19 20:56:14,580 | INFO | ============================================================
+2026-07-19 20:56:14,580 | INFO | ============================================================
+2026-07-19 20:56:14,580 | INFO | Starting ingestion : ratings
+2026-07-19 20:56:14,623 | INFO | Source      : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\ratings.csv
+2026-07-19 20:56:14,623 | INFO | Destination : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\ratings\2026\07\19\205614\ratings.csv
+2026-07-19 20:56:14,623 | INFO | Status      : SUCCESS
+2026-07-19 20:56:14,623 | INFO | Completed ingestion : ratings
+2026-07-19 20:56:14,623 | INFO | ============================================================
+2026-07-19 20:56:14,623 | INFO | ============================================================
+2026-07-19 20:56:14,623 | INFO | Starting ingestion : links
+2026-07-19 20:56:14,644 | INFO | Source      : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\links.csv
+2026-07-19 20:56:14,644 | INFO | Destination : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\links\2026\07\19\205614\links.csv
+2026-07-19 20:56:14,644 | INFO | Status      : SUCCESS
+2026-07-19 20:56:14,644 | INFO | Completed ingestion : links
+2026-07-19 20:56:14,644 | INFO | ============================================================
+2026-07-19 20:56:14,644 | INFO | ============================================================
+2026-07-19 20:56:14,644 | INFO | Starting ingestion : tags
+2026-07-19 20:56:14,665 | INFO | Source      : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\dataset\tags.csv
+2026-07-19 20:56:14,665 | INFO | Destination : C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\csv\tags\2026\07\19\205614\tags.csv
+2026-07-19 20:56:14,666 | INFO | Status      : SUCCESS
+2026-07-19 20:56:14,666 | INFO | Completed ingestion : tags
+2026-07-19 20:56:14,666 | INFO | ============================================================
+2026-07-19 20:56:14,666 | INFO | ================================================================================
+2026-07-19 20:56:14,666 | INFO | CSV INGESTION COMPLETED
+2026-07-19 20:56:14,666 | INFO | ================================================================================
+2026-07-19 20:56:14,666 | INFO | ================================================================================
+2026-07-19 20:56:14,666 | INFO | API INGESTION STARTED
+2026-07-19 20:56:14,666 | INFO | ================================================================================
+2026-07-19 20:56:14,666 | INFO | API Request Attempt 1
+2026-07-19 20:56:15,210 | INFO | API data stored at C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw\api\products\2026\07\19\205615\products.json
+2026-07-19 20:56:15,210 | INFO | ================================================================================
+2026-07-19 20:56:15,210 | INFO | API INGESTION COMPLETED
+2026-07-19 20:56:15,210 | INFO | ================================================================================
+2026-07-19 20:56:15,211 | INFO | Metadata saved -> C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\metadata\ingestion_metadata.json
+2026-07-19 20:56:15,212 | INFO | Starting data validation from C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw
+2026-07-19 20:56:15,221 | INFO | ================================================================================
+2026-07-19 20:56:15,221 | INFO | DATA VALIDATION PIPELINE STARTED
+2026-07-19 20:56:15,221 | INFO | ================================================================================
+2026-07-19 20:56:15,221 | INFO | Starting validation for movies
+2026-07-19 20:56:15,232 | INFO | Validation completed for movies: FAIL (3/4 checks passed)
+2026-07-19 20:56:15,233 | INFO | Starting validation for ratings
+2026-07-19 20:56:15,272 | INFO | Validation completed for ratings: PASS (5/5 checks passed)
+2026-07-19 20:56:15,272 | INFO | Starting validation for links
+2026-07-19 20:56:15,277 | INFO | Validation completed for links: FAIL (2/4 checks passed)
+2026-07-19 20:56:15,277 | INFO | Starting validation for tags
+2026-07-19 20:56:15,283 | INFO | Validation completed for tags: FAIL (3/4 checks passed)
+2026-07-19 20:56:15,283 | INFO | ================================================================================
+2026-07-19 20:56:15,283 | INFO | VALIDATION PHASE COMPLETED
+2026-07-19 20:56:15,283 | INFO | ================================================================================
+2026-07-19 20:56:15,283 | INFO | ================================================================================
+2026-07-19 20:56:15,283 | INFO | DATA PROFILING PHASE STARTED
+2026-07-19 20:56:15,283 | INFO | ================================================================================
+2026-07-19 20:56:15,283 | INFO | Profiling dataset: movies
+2026-07-19 20:56:15,316 | INFO | Profile generated for movies
+2026-07-19 20:56:15,317 | INFO | Profiling dataset: ratings
+2026-07-19 20:56:15,395 | INFO | Profile generated for ratings
+2026-07-19 20:56:15,396 | INFO | Profiling dataset: links
+2026-07-19 20:56:15,410 | INFO | Profile generated for links
+2026-07-19 20:56:15,410 | INFO | Profiling dataset: tags
+2026-07-19 20:56:15,425 | INFO | Profile generated for tags
+2026-07-19 20:56:15,425 | INFO | ================================================================================
+2026-07-19 20:56:15,425 | INFO | DATA PROFILING PHASE COMPLETED
+2026-07-19 20:56:15,425 | INFO | ================================================================================
+2026-07-19 20:56:15,425 | INFO | ================================================================================
+2026-07-19 20:56:15,425 | INFO | REPORT GENERATION STARTED
+2026-07-19 20:56:15,425 | INFO | ================================================================================
+2026-07-19 20:56:15,425 | INFO | Generating PDF report: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\DataQualityReport_20260719_205615.pdf
+2026-07-19 20:56:15,450 | INFO | Report successfully generated: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\DataQualityReport_20260719_205615.pdf
+2026-07-19 20:56:15,450 | INFO | ================================================================================
+2026-07-19 20:56:15,450 | INFO | REPORT GENERATION COMPLETED
+2026-07-19 20:56:15,450 | INFO | ================================================================================
+2026-07-19 20:56:15,452 | INFO | Validation results saved to: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\validation_results.json
+2026-07-19 20:56:15,452 | INFO | Report generated at: C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\reports\DataQualityReport_20260719_205615.pdf
+2026-07-19 20:56:15,452 | INFO | Starting data preparation from C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\raw
+2026-07-19 20:56:15,457 | INFO | Cleaning dataset: movies
+2026-07-19 20:56:15,471 | INFO | Cleaning completed for movies: 0 rows dropped
+2026-07-19 20:56:15,471 | INFO | Preprocessing dataset: movies
+2026-07-19 20:56:15,533 | INFO | Preprocessing completed for movies
+2026-07-19 20:56:15,548 | INFO | Cleaning dataset: ratings
+2026-07-19 20:56:15,599 | INFO | Cleaning completed for ratings: 0 rows dropped
+2026-07-19 20:56:15,599 | INFO | Preprocessing dataset: ratings
+2026-07-19 20:56:15,615 | INFO | Preprocessing completed for ratings
+2026-07-19 20:56:15,993 | INFO | Cleaning dataset: links
+2026-07-19 20:56:16,003 | INFO | Cleaning completed for links: 8 rows dropped
+2026-07-19 20:56:16,003 | INFO | Preprocessing dataset: links
+2026-07-19 20:56:16,009 | INFO | Preprocessing completed for links
+2026-07-19 20:56:16,038 | INFO | Cleaning dataset: tags
+2026-07-19 20:56:16,043 | INFO | Cleaning completed for tags: 0 rows dropped
+2026-07-19 20:56:16,043 | INFO | Preprocessing dataset: tags
+2026-07-19 20:56:16,055 | INFO | Preprocessing completed for tags
+2026-07-19 20:56:16,092 | INFO | Preparation summary saved to C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\processed\preparation_summary.json
+2026-07-19 20:56:16,097 | INFO | Starting feature engineering from C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\processed
+2026-07-19 20:56:16,637 | INFO | Features saved to C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\data\features\features.csv (100836 rows)
+2026-07-19 20:56:16,790 | INFO | Model trained and persisted to C:\Users\saura\DM4ML-Group12\RecoMart-Recommendation-Pipeline\models\baseline_model.joblib (RMSE=0.1806)
