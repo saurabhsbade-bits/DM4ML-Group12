@@ -2,7 +2,7 @@
 
 ## 1. Model
 
-**Algorithm:** Collaborative Filtering using Truncated SVD
+**Algorithm:** Collaborative Filtering using Matrix Factorization (Truncated SVD)
 
 ---
 
@@ -62,8 +62,12 @@ Git was used to maintain data lineage and version history.
 
 ## 7. Conclusion
 
-The recommendation model was successfully trained using Collaborative Filtering (Truncated SVD).
+A collaborative filtering recommendation model based on Matrix Factorization (Truncated SVD) was successfully trained using the processed MovieLens ratings dataset.
 
-Evaluation metrics indicate the model can effectively generate Top-K recommendations.
+The model achieved:
 
-The complete experiment, parameters, metrics and trained model were tracked using MLflow.
+- Precision@10: 0.2739
+- Recall@10: 0.1627
+- NDCG@10: 0.3185
+
+Processed datasets were versioned using DVC, while MLflow was used to track experiments, model parameters, evaluation metrics, and model artifacts, ensuring reproducibility of the recommendation pipeline.
