@@ -1,20 +1,23 @@
 # Virtual environments
 venv/
+venv312/
 .venv/
 env/
 ENV/
 prvenv/
 
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
+# IDE
+.idea/
 
 # macOS
 .DS_Store
 
-# Logs
-*.log
+# Python
+__pycache__/
+*.pyc
 
-# DVC
-data/processed/
+# MLflow local database
+mlflow.db
+
+# mlruns
+mlruns/
