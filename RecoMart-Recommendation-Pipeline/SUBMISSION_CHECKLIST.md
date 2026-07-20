@@ -118,7 +118,7 @@ This guide helps team members understand:
 - [ ] Finalize `src/ingestion/__init__.py` integration wrapper and verify `ingest_data()` works end to end
 - [ ] Finalize `src/validation/__init__.py` and `src/preparation/__init__.py` wrappers to call existing implemented modules
 - [ ] Validate Airflow DAG execution through ingestion → validation → preparation
-- [ ] Keep Member 3 and Member 4 tasks as pending placeholders until their code is merged
+- [x] Member 3 (Feature Engineering & Feature Store) implementation merged — keep Member 4 as a pending placeholder until its code is merged
 - [ ] Confirm monitoring/alert callbacks log task lifecycle events correctly
 - [ ] Update `docs/runbook.md` and this checklist with current integration status and handoff notes
 
@@ -393,19 +393,19 @@ def retrieve_features(entity_ids: list, feature_names: list,
 ```
 
 **Deliverables After Implementation:**
-- [ ] `src/features/__init__.py` - Fully implemented feature engineering
-- [ ] `data/features/engineered_features_*.csv` - Sample feature matrix
-- [ ] `feature_store/registry.json` - Feature registry/manifest
-- [ ] `feature_store/schema.sql` - Database schema (if using relational store)
-- [ ] `docs/feature_engineering_guide.md` - Feature definitions and engineering details
+- [x] `src/features/__init__.py` - Fully implemented feature engineering (plus `user_features.py`, `item_features.py`, `similarity_features.py`, `feature_store.py`, `sql_schema.py`, `test_features.py`)
+- [x] `data/features/engineered_features_*.csv` - Sample feature matrix (also `user_features.csv`, `item_features.csv`, `interaction_features.csv`, and legacy `features.csv` for Member 4 compatibility)
+- [x] `feature_store/registry.json` - Feature registry/manifest
+- [x] `feature_store/schema.sql` - Database schema (if using relational store)
+- [x] `docs/07_Feature_Engineering_Guide.md` - Feature definitions and engineering details
 
 **Integration Steps:**
-1. Implement all 4 functions in `src/features/__init__.py`
-2. Create feature store configuration in `feature_store/`
-3. Test locally with sample data
-4. Ensure output format matches Member 4 expectations (feature matrix shape, columns)
-5. Test via Airflow pipeline
-6. Document all engineered features and their meanings
+1. [x] Implement all 4 functions in `src/features/__init__.py`
+2. [x] Create feature store configuration in `feature_store/`
+3. [x] Test locally with sample data (`python -m unittest src.features.test_features -v` — 11 tests passing)
+4. [x] Ensure output format matches Member 4 expectations (feature matrix shape, columns) — verified `scripts/run_e2e.py` end to end, `train_model()` runs unchanged against the new `features.csv`
+5. [ ] Test via Airflow pipeline
+6. [x] Document all engineered features and their meanings
 
 ---
 

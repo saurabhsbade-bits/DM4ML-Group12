@@ -205,7 +205,7 @@ Pipeline Completed
 
 - **Ingestion (Member 1):** Validated — CSV and API ingestion run successfully and metadata saved to `data/metadata/ingestion_metadata.json`.
 - **Validation & Preparation (Member 2):** Validated — validation reports and EDA generated; prepared data saved in `data/processed`.
-- **Feature Engineering (Member 3):** Minimal working placeholder implemented (`src/features`) that produces `data/features/features.csv`.
+- **Feature Engineering (Member 3):** Fully implemented (`src/features`) — ~96 engineered user/item/interaction/similarity features, a generated SQL schema (`feature_store/schema.sql`), and a custom versioned feature store (`feature_store/registry.json`) with point-in-time retrieval. See `docs/07_Feature_Engineering_Guide.md`.
 - **Model Training (Member 4):** Minimal working placeholder implemented (`src/models`) that trains and persists a baseline model at `models/baseline_model.joblib`.
 - **Member 5 Integration:** Verified integration of ingestion/validation/preparation wrappers (Member 5 wiring validated).
 
