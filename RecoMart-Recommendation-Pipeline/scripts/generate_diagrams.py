@@ -80,7 +80,7 @@ def generate_architecture_diagram():
             "y": 6.2, "color": "#ead1dc",
         },
         {
-            "label": "MEMBER 4 — MODEL TRAINING & EVALUATION\nsrc/models/train.py — TruncatedSVD collaborative filtering  →  models/svd_recommender.pkl\nsrc/models/__init__.py — DAG placeholder (LinearRegression)  →  models/baseline_model.joblib\nMetrics: reports/evaluation_report.md (Precision@10, Recall@10, NDCG@10)",
+            "label": "MEMBER 4 — MODEL TRAINING & EVALUATION\nsrc/models/train.py — TruncatedSVD collaborative filtering  →  models/svd_recommender.pkl\nsrc/models/__init__.py — train_model() runs the same SVD model (DAG default)\nBaseline LinearRegression kept as an explicit model_type=\"baseline\" fallback\nMetrics: reports/evaluation_report.md (Precision@10, Recall@10, NDCG@10)",
             "y": 3.9, "color": "#f4cccc",
         },
         {
@@ -88,7 +88,7 @@ def generate_architecture_diagram():
             "y": 1.9, "color": "#fce5cd",
         },
         {
-            "label": "VERSIONING & TRACKING\nDVC (dvc.yaml, data/processed.dvc)  •  MLflow experiment tracking (mlruns/)",
+            "label": "VERSIONING & TRACKING\nDVC (per-file data/processed/*.csv.dvc, local remote)  •  MLflow experiment tracking (mlruns/)",
             "y": 0.2, "color": "#e2e2e2",
         },
     ]
