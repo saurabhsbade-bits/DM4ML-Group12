@@ -247,29 +247,7 @@ Pipeline orchestration includes:
 
 ---
 
-# 📸 Sample Outputs
 
-## Architecture
-
-> docs/images/architecture.png
-
-## Feature Store
-
-> docs/images/feature_store.png
-
-## MLflow
-
-> docs/images/mlflow.png
-
-## DVC
-
-> docs/images/dvc.png
-
-## Airflow
-
-> docs/images/airflow.png
-
----
 
 # 🛠️ Technology Stack
 
