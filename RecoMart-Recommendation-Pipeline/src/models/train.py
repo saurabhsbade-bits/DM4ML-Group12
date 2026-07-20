@@ -5,12 +5,12 @@ Collaborative Filtering using Matrix Factorization (Truncated SVD)
 Experiment Tracking using MLflow
 """
 
-import os
+import logging
 import pickle
 import warnings
+from pathlib import Path
+from typing import Any, Dict, Optional
 
-import mlflow
-import mlflow.sklearn
 import numpy as np
 import pandas as pd
 
@@ -20,21 +20,22 @@ from sklearn.model_selection import train_test_split
 
 warnings.filterwarnings("ignore")
 
+logger = logging.getLogger(__name__)
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 # ==========================================================
 # Configuration
 # ==========================================================
 
-DATA_PATH = "data/processed/ratings_processed.csv"
+DATA_PATH = PROJECT_ROOT / "data" / "processed" / "ratings_processed.csv"
 
-MODEL_DIR = "models"
+MODEL_DIR = PROJECT_ROOT / "models"
 MODEL_FILE = "svd_recommender.pkl"
 
 TOP_K = 10
 TEST_SIZE = 0.2
 RANDOM_STATE = 42
-
-os.makedirs(MODEL_DIR, exist_ok=True)
 
 
 # ==========================================================
@@ -98,224 +99,170 @@ def ndcg_at_k(actual, predicted, k=10):
 
 
 # ==========================================================
-# Load Dataset
+# Training Entry Point
 # ==========================================================
 
-print("=" * 60)
-print("Loading Dataset")
-print("=" * 60)
+def train_svd_model(
+    data_path: Optional[str] = None,
+    output_dir: Optional[str] = None,
+    top_k: int = TOP_K,
+    test_size: float = TEST_SIZE,
+    random_state: int = RANDOM_STATE,
+) -> Dict[str, Any]:
+    """Train the real Member 4 collaborative-filtering model (TruncatedSVD).
 
-ratings = pd.read_csv(DATA_PATH)
+    Loads `ratings_processed.csv` (produced by `src.validation.prepare_data`
+    and DVC-tracked), builds a user-item interaction matrix, fits a
+    TruncatedSVD model, evaluates it with Precision/Recall/NDCG@K, saves the
+    model + id mappings to `output_dir/svd_recommender.pkl`, and (best
+    effort) logs the run to MLflow.
 
-print(ratings.head())
+    Args:
+        data_path: Path to the processed ratings CSV. Defaults to
+            `data/processed/ratings_processed.csv` under the project root.
+            If missing, run `dvc pull` (or `python -m src.validation` /
+            the DAG's preparation stage) to (re)generate it.
+        output_dir: Directory to save the trained model to. Defaults to
+            `models/` under the project root.
+        top_k: K used for Precision/Recall/NDCG@K.
+        test_size: Fraction of interactions held out for evaluation.
+        random_state: Random seed for the train/test split and TruncatedSVD.
 
-print("\nShape:", ratings.shape)
+    Returns:
+        Dict with status, model_path and metrics (precision_at_k, recall_at_k,
+        ndcg_at_k, n_components, train_rows, test_rows).
+    """
+    data_file = Path(data_path) if data_path else DATA_PATH
+    out_dir = Path(output_dir) if output_dir else MODEL_DIR
+    out_dir.mkdir(parents=True, exist_ok=True)
 
-print("\nOriginal Unique Users :", ratings["userId"].nunique())
-print("Original Unique Movies:", ratings["movieId"].nunique())
+    if not data_file.exists():
+        raise FileNotFoundError(
+            f"{data_file} not found. This file is produced by "
+            "src.validation.prepare_data() and versioned with DVC. "
+            "Run the preparation stage (or `dvc pull`) before training."
+        )
 
+    logger.info(f"Loading ratings from {data_file}")
+    ratings = pd.read_csv(data_file)
+    logger.info(f"Ratings shape: {ratings.shape}")
 
-# ==========================================================
-#
-# IDs were normalized by preprocessing.
-# Recreate integer indices while preserving uniqueness.
-#
-# ==========================================================
+    # IDs may have been normalized by preprocessing. Recreate integer
+    # indices while preserving uniqueness.
+    ratings["user_idx"], user_mapping = pd.factorize(ratings["userId"])
+    ratings["movie_idx"], movie_mapping = pd.factorize(ratings["movieId"])
 
-ratings["user_idx"], user_mapping = pd.factorize(ratings["userId"])
+    train_df, test_df = train_test_split(
+        ratings,
+        test_size=test_size,
+        random_state=random_state,
+    )
+    logger.info(f"Train rows: {len(train_df)}, Test rows: {len(test_df)}")
 
-ratings["movie_idx"], movie_mapping = pd.factorize(ratings["movieId"])
+    # User-item interaction matrix
+    interaction_matrix = train_df.pivot_table(
+        index="user_idx",
+        columns="movie_idx",
+        values="rating",
+        fill_value=0,
+    )
+    matrix = csr_matrix(interaction_matrix.values)
 
-print("\nAfter Factorization")
+    # Train TruncatedSVD
+    n_components = min(50, matrix.shape[0] - 1, matrix.shape[1] - 1)
+    svd = TruncatedSVD(n_components=n_components, random_state=random_state)
+    latent_matrix = svd.fit_transform(matrix)
+    reconstructed = latent_matrix @ svd.components_
 
-print("Users :", ratings["user_idx"].nunique())
-print("Movies:", ratings["movie_idx"].nunique())
-
-
-# ==========================================================
-# Train Test Split
-# ==========================================================
-
-train_df, test_df = train_test_split(
-    ratings,
-    test_size=TEST_SIZE,
-    random_state=RANDOM_STATE,
-)
-
-print("\nTrain:", len(train_df))
-print("Test :", len(test_df))
-
-
-# ==========================================================
-# User Item Matrix
-# ==========================================================
-
-interaction_matrix = train_df.pivot_table(
-    index="user_idx",
-    columns="movie_idx",
-    values="rating",
-    fill_value=0,
-)
-
-matrix = csr_matrix(interaction_matrix.values)
-
-print("\nInteraction Matrix Shape")
-
-print(matrix.shape)
-
-
-# ==========================================================
-# Train Model
-# ==========================================================
-
-print("\nTraining Truncated SVD...")
-
-n_components = min(
-    50,
-    matrix.shape[0] - 1,
-    matrix.shape[1] - 1,
-)
-
-svd = TruncatedSVD(
-    n_components=n_components,
-    random_state=RANDOM_STATE,
-)
-
-latent_matrix = svd.fit_transform(matrix)
-
-reconstructed = latent_matrix @ svd.components_
-
-prediction_matrix = pd.DataFrame(
-    reconstructed,
-    index=interaction_matrix.index,
-    columns=interaction_matrix.columns,
-)
-
-print("Training Complete")
-
-
-# ==========================================================
-# Prepare Ground Truth
-# ==========================================================
-
-actual = (
-    test_df
-    .groupby("user_idx")["movie_idx"]
-    .apply(list)
-    .to_dict()
-)
-
-predicted = {}
-
-for user in actual.keys():
-
-    if user not in prediction_matrix.index:
-        continue
-
-    already_seen = set(
-        train_df.loc[
-            train_df.user_idx == user,
-            "movie_idx"
-        ]
+    prediction_matrix = pd.DataFrame(
+        reconstructed,
+        index=interaction_matrix.index,
+        columns=interaction_matrix.columns,
     )
 
-    recommendations = (
-        prediction_matrix
-        .loc[user]
-        .drop(labels=list(already_seen), errors="ignore")
-        .sort_values(ascending=False)
-        .head(TOP_K)
-        .index
-        .tolist()
+    # Ground truth + recommendations
+    actual = test_df.groupby("user_idx")["movie_idx"].apply(list).to_dict()
+
+    predicted = {}
+    for user in actual.keys():
+        if user not in prediction_matrix.index:
+            continue
+
+        already_seen = set(
+            train_df.loc[train_df.user_idx == user, "movie_idx"]
+        )
+
+        recommendations = (
+            prediction_matrix
+            .loc[user]
+            .drop(labels=list(already_seen), errors="ignore")
+            .sort_values(ascending=False)
+            .head(top_k)
+            .index
+            .tolist()
+        )
+        predicted[user] = recommendations
+
+    precision, recall = precision_recall_at_k(actual, predicted, top_k)
+    ndcg = ndcg_at_k(actual, predicted, top_k)
+
+    logger.info(
+        f"Precision@{top_k}: {precision:.4f}, Recall@{top_k}: {recall:.4f}, "
+        f"NDCG@{top_k}: {ndcg:.4f}"
     )
 
-    predicted[user] = recommendations
+    # Save model
+    model_path = out_dir / MODEL_FILE
+    with open(model_path, "wb") as f:
+        pickle.dump(
+            {
+                "model": svd,
+                "user_mapping": user_mapping,
+                "movie_mapping": movie_mapping,
+            },
+            f,
+        )
+    logger.info(f"Model saved to {model_path}")
+
+    metrics = {
+        "precision_at_10": float(precision),
+        "recall_at_10": float(recall),
+        "ndcg_at_10": float(ndcg),
+        "n_components": int(n_components),
+        "train_rows": int(len(train_df)),
+        "test_rows": int(len(test_df)),
+    }
+
+    # Best-effort MLflow logging: must never fail the training run just
+    # because no tracking server is configured/reachable.
+    try:
+        import mlflow
+        import mlflow.sklearn
+
+        mlflow.set_experiment("RecoMart Recommendation")
+        with mlflow.start_run():
+            mlflow.log_param("algorithm", "TruncatedSVD")
+            mlflow.log_param("n_components", n_components)
+            mlflow.log_param("top_k", top_k)
+            mlflow.log_param("test_size", test_size)
+            mlflow.log_metric("precision_at_10", float(precision))
+            mlflow.log_metric("recall_at_10", float(recall))
+            mlflow.log_metric("ndcg_at_10", float(ndcg))
+            mlflow.sklearn.log_model(svd, artifact_path="recommendation_model")
+        logger.info("MLflow run complete")
+    except Exception as e:
+        logger.warning(f"MLflow logging skipped: {e}")
+
+    return {
+        "status": "success",
+        "model_path": str(model_path),
+        "metrics": metrics,
+    }
 
 
-# ==========================================================
-# Evaluation
-# ==========================================================
-
-precision, recall = precision_recall_at_k(
-    actual,
-    predicted,
-    TOP_K,
-)
-
-ndcg = ndcg_at_k(
-    actual,
-    predicted,
-    TOP_K,
-)
-
-print("\n")
-print("=" * 60)
-print("Evaluation")
-print("=" * 60)
-
-print(f"Precision@{TOP_K}: {precision:.4f}")
-print(f"Recall@{TOP_K}:    {recall:.4f}")
-print(f"NDCG@{TOP_K}:      {ndcg:.4f}")
-
-
-# ==========================================================
-# Save Model
-# ==========================================================
-
-model_path = os.path.join(
-    MODEL_DIR,
-    MODEL_FILE,
-)
-
-with open(model_path, "wb") as f:
-    pickle.dump(
-        {
-            "model": svd,
-            "user_mapping": user_mapping,
-            "movie_mapping": movie_mapping,
-        },
-        f,
-    )
-
-print("\nModel Saved")
-
-print(model_path)
-
-
-# ==========================================================
-# MLflow
-# ==========================================================
-
-print("\nLogging to MLflow...")
-
-mlflow.set_experiment("RecoMart Recommendation")
-
-with mlflow.start_run():
-    mlflow.log_param("algorithm", "TruncatedSVD")
-    mlflow.log_param("n_components", n_components)
-    mlflow.log_param("top_k", TOP_K)
-    mlflow.log_param("test_size", TEST_SIZE)
-
-    mlflow.log_metric(
-        "precision_at_10",
-        float(precision),
-    )
-
-    mlflow.log_metric(
-        "recall_at_10",
-        float(recall),
-    )
-
-    mlflow.log_metric(
-        "ndcg_at_10",
-        float(ndcg),
-    )
-
-    mlflow.sklearn.log_model(
-        svd,
-        artifact_path="recommendation_model",
-    )
-
-print("MLflow Run Complete")
-
-print("\nDone")
+if __name__ == "__main__":
+    result = train_svd_model()
+    print("=" * 60)
+    print("Training Complete")
+    print("=" * 60)
+    print(result)

@@ -1,6 +1,32 @@
 # Architecture Diagram - RecoMart Recommendation Pipeline
 
-## High-Level Architecture
+## Diagram Images
+
+The diagrams below are generated directly from the real project structure and
+the actual Airflow DAG task graph (see `scripts/generate_diagrams.py`, which
+uses matplotlib — no Graphviz binary required to regenerate them).
+
+### System Architecture
+
+![RecoMart system architecture diagram](diagrams/architecture_diagram.png)
+
+### Airflow DAG Task Flow
+
+This mirrors the real, linear task dependency chain defined in
+`airflow/dags/recom_pipeline.py`:
+`pipeline_start → ingestion_layer.ingest_data → validation_layer.validate_data
+→ preparation_layer.prepare_data → feature_layer.engineer_features →
+feature_layer.setup_feature_store → model_layer.train_model → pipeline_end`.
+
+![Airflow DAG task flow diagram](diagrams/dag_flow_diagram.png)
+
+To regenerate both images after changing the pipeline structure:
+
+```bash
+python scripts/generate_diagrams.py
+```
+
+## High-Level Architecture (ASCII reference)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐

@@ -22,7 +22,29 @@ def train_model(
     output_path: str,
     model_type: str = "collaborative_filtering",
 ) -> Dict[str, Any]:
-    """Simple model training placeholder.
+    """Train the RecoMart recommendation model.
+
+    For `model_type="collaborative_filtering"` (the default, used by the
+    DAG), this trains the real Member 4 TruncatedSVD model
+    (`src.models.train.train_svd_model`) on the DVC-tracked
+    `data/processed/ratings_processed.csv`, saving `svd_recommender.pkl`
+    to `output_path` and returning Precision/Recall/NDCG@10 metrics.
+
+    For `model_type="baseline"`, a lightweight LinearRegression baseline is
+    trained instead, using `features.csv` from `features_path`. This is
+    kept for quick smoke tests where the full ratings dataset may not be
+    available.
+    """
+    if model_type == "baseline":
+        return _train_baseline_model(features_path, output_path)
+
+    from src.models.train import train_svd_model
+
+    return train_svd_model(output_dir=output_path)
+
+
+def _train_baseline_model(features_path: str, output_path: str) -> Dict[str, Any]:
+    """Lightweight LinearRegression baseline (fallback / smoke-test model).
 
     Loads `features.csv` from `features_path`, trains a small
     linear regression using `user_avg` and `item_avg` to predict

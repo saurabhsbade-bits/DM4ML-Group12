@@ -10748,7 +10748,7 @@
             },
             "processed_columns": 3
         },
-        "output_file": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\processed\\movies_processed.csv"
+        "output_file": "data\\processed\\movies_processed.csv"
     },
     "ratings": {
         "clean_report": {
@@ -10827,7 +10827,7 @@
             },
             "processed_columns": 4
         },
-        "output_file": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\processed\\ratings_processed.csv"
+        "output_file": "data\\processed\\ratings_processed.csv"
     },
     "links": {
         "clean_report": {
@@ -10905,7 +10905,7 @@
             },
             "processed_columns": 3
         },
-        "output_file": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\processed\\links_processed.csv"
+        "output_file": "data\\processed\\links_processed.csv"
     },
     "tags": {
         "clean_report": {
@@ -12571,6 +12571,6 @@
             },
             "processed_columns": 4
         },
-        "output_file": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\processed\\tags_processed.csv"
+        "output_file": "data\\processed\\tags_processed.csv"
     }
 }

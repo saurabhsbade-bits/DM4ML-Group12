@@ -661,9 +661,12 @@ git push origin member-{1-4}-implementation
 - [ ] Retries work as expected for failed tasks
 
 #### **Documentation**
-- [ ] Architecture diagram is complete (docs/architecture.md)
+- [x] Architecture diagram is complete (`docs/architecture.md`, with real generated
+      PNG diagrams in `docs/diagrams/` in addition to the ASCII reference)
 - [ ] Runbook has step-by-step instructions (docs/runbook.md)
-- [ ] Final report is filled with project details (reports/FINAL_REPORT_TEMPLATE.md)
+- [x] Final report is filled with project details (`reports/FINAL_REPORT.md`,
+      superseding `FINAL_REPORT_TEMPLATE.md`, with real metrics/artifacts —
+      see its "Known Gaps" section for remaining items)
 - [ ] Each module has a README or guide document
 - [ ] Setup instructions are clear and tested
 

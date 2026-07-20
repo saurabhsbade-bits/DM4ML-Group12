@@ -180,7 +180,7 @@ def task_model_training(**context):
         logger.info("Starting model training task...")
         metrics = train_model(
             features_path=str(DATA_PATH / "features"),
-            output_path=str(PROJECT_ROOT / "mlruns"),
+            output_path=str(PROJECT_ROOT / "models"),
         )
         logger.info("Model training completed")
         logger.info(f"Training metrics: {metrics}")
@@ -287,10 +287,18 @@ with dag:
     )
 
     # Task dependencies
+    # NOTE: the intra-group dependency (engineer >> feature_store) must be
+    # declared *before* wiring preparation_layer >> feature_layer. Airflow
+    # resolves a TaskGroup's "roots" using whatever upstream/downstream
+    # relationships already exist at the moment the >> is evaluated. If the
+    # group-to-group edge is created first, both engineer_features and
+    # setup_feature_store still look like roots (neither has an upstream yet)
+    # and both end up wired directly to preparation_layer, producing a stray
+    # prepare_data -> setup_feature_store edge that bypasses engineer_features.
     start >> ingestion_layer
     ingestion_layer >> validation_layer
     validation_layer >> preparation_layer
-    preparation_layer >> feature_layer
     engineer >> feature_store
+    preparation_layer >> feature_layer
     feature_store >> model_layer
     model_layer >> end
