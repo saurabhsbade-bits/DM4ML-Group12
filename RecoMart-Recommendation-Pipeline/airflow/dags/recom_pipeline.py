@@ -180,7 +180,7 @@ def task_model_training(**context):
         logger.info("Starting model training task...")
         metrics = train_model(
             features_path=str(DATA_PATH / "features"),
-            output_path=str(PROJECT_ROOT / "mlruns"),
+            output_path=str(PROJECT_ROOT / "models"),
         )
         logger.info("Model training completed")
         logger.info(f"Training metrics: {metrics}")

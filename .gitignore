@@ -1,0 +1,4 @@
+# Local DVC remote storage (configured via `dvc remote add -d localstore ../dvc-storage`
+# from within RecoMart-Recommendation-Pipeline). This holds content-addressed data
+# blobs pushed via `dvc push` and should not be committed to git.
+dvc-storage/
