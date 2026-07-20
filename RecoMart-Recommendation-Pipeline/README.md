@@ -1,429 +1,381 @@
 # 🎬 RecoMart Recommendation Pipeline
 
-An automated **multi-source data ingestion pipeline** developed for the **DM4ML (Data Management for Machine Learning)** course at **BITS Pilani WILP**.
+> **An End-to-End Data Management & MLOps Pipeline for Recommendation Systems**
 
-The pipeline ingests data from structured CSV datasets and REST APIs, stores raw data in a timestamp-based data lake, generates metadata, maintains execution logs, and supports automated scheduling.
-
----
-
-# 📌 Project Overview
-
-Modern recommendation systems require continuous ingestion of data from multiple heterogeneous sources before feature engineering and model training can begin.
-
-The **RecoMart Recommendation Pipeline** automates this process by:
-
-- Ingesting MovieLens CSV datasets
-- Fetching product information from a REST API
-- Organizing raw data into a scalable data lake
-- Generating ingestion metadata
-- Logging pipeline execution
-- Supporting automated scheduling
-
-This project demonstrates the **Data Ingestion Layer** of an end-to-end recommendation system.
+[![Python](https://img.shields.io/badge/Python-3.11-blue.svg)]()
+[![MLflow](https://img.shields.io/badge/MLflow-Experiment%20Tracking-orange)]()
+[![DVC](https://img.shields.io/badge/DVC-Data%20Versioning-purple)]()
+[![Apache Airflow](https://img.shields.io/badge/Airflow-Orchestration-red)]()
+[![License](https://img.shields.io/badge/License-MIT-green.svg)]()
 
 ---
 
-# 🚀 Features
+## 📌 Project Overview
 
-- ✅ Multi-source data ingestion
-- ✅ CSV ingestion
-- ✅ REST API ingestion
-- ✅ Timestamp-based raw data lake
-- ✅ Metadata generation
-- ✅ Centralized logging
-- ✅ Retry mechanism for API failures
-- ✅ Error handling
-- ✅ Automated scheduler
-- ✅ Modular architecture
-- ✅ Configuration-driven implementation
+RecoMart Recommendation Pipeline is an **end-to-end MLOps workflow** developed as part of the **Data Management for Machine Learning (DM4ML)** course at **BITS Pilani WILP**.
+
+The project demonstrates the complete lifecycle of a recommendation system, from multi-source data ingestion to model training, experiment tracking, feature management, and workflow orchestration.
+
+The pipeline integrates modern MLOps technologies including:
+
+- Apache Airflow
+- MLflow
+- Data Version Control (DVC)
+- Custom Offline Feature Store
+- TruncatedSVD Recommendation Model
 
 ---
 
-# 🏗️ Project Architecture
+# 🚀 Pipeline Architecture
 
-```text
-                    MovieLens Dataset
-                           │
-                           ▼
-                    CSV Ingestion
-                           │
-                           │
-DummyJSON REST API ─────────┤
-                           ▼
-                  API Ingestion
-                           │
-                           ▼
-                    Raw Data Lake
-                           │
-          ┌────────────────┴───────────────┐
-          ▼                                ▼
-   Metadata Generation                 Logging
-          │                                │
-          └────────────────┬───────────────┘
-                           ▼
-                     Main Pipeline
-                           │
-                           ▼
-                      Scheduler
+<p align="center">
+<img src="docs/images/architecture.png" width="900">
+</p>
+
+The pipeline consists of the following stages:
+
+```
+MovieLens CSV
+        +
+ DummyJSON REST API
+        │
+        ▼
+ Data Ingestion
+        │
+        ▼
+ Data Validation
+        │
+        ▼
+ Data Preparation
+        │
+        ▼
+ Feature Engineering
+        │
+        ▼
+ Versioned Feature Store
+        │
+        ▼
+ Recommendation Model
+        │
+        ▼
+ MLflow Experiment Tracking
+        │
+        ▼
+ DVC Data Versioning
+        │
+        ▼
+ Apache Airflow Orchestration
 ```
 
 ---
 
-# 📁 Project Structure
+# 📂 Repository Structure
 
-```text
-RecoMart-Recommendation-Pipeline/
+```
+RecoMart-Recommendation-Pipeline
 │
-├── dataset/
-│   ├── movies.csv
-│   ├── ratings.csv
-│   ├── links.csv
-│   └── tags.csv
+├── airflow/
+│   ├── dags/
+│   └── logs/
 │
 ├── data/
 │   ├── raw/
-│   │   ├── csv/
-│   │   └── api/
 │   ├── processed/
-│   ├── metadata/
-│   └── logs/
+│   └── reports/
+│
+├── dataset/
 │
 ├── docs/
-│   ├── 01_Business_Problem.md
-│   ├── 02_Project_Objectives.md
-│   ├── 03_Dataset_Documentation.md
-│   ├── 04_Storage_Architecture.md
-│   ├── 05_Ingestion_Workflow.md
-│   └── 06_User_Guide.md
+│
+├── feature_store/
+│
+├── models/
+│
+├── reports/
+│
+├── scripts/
 │
 ├── src/
-│   ├── config/
-│   │   └── config.py
-│   │
 │   ├── ingestion/
-│   │   ├── csv_ingestion.py
-│   │   ├── api_ingestion.py
-│   │   └── scheduler.py
-│   │
-│   ├── metadata/
-│   │   └── metadata_generator.py
-│   │
+│   ├── validation/
+│   ├── preparation/
+│   ├── features/
+│   ├── models/
 │   └── utils/
-│       ├── helper.py
-│       └── logger.py
 │
-├── main.py
+├── dvc.yaml
+├── processed.dvc
 ├── requirements.txt
 └── README.md
 ```
 
 ---
 
-# 📂 Data Sources
+# 📊 Dataset
 
-## 1. MovieLens Dataset
+The project uses two data sources:
 
-The MovieLens dataset provides movie information and historical user ratings.
+### 🎥 MovieLens Dataset
 
-Files used:
+- Movies
+- Ratings
+- Tags
+- Links
 
-- movies.csv
-- ratings.csv
-- links.csv
-- tags.csv
-
-Reference:
+Dataset:
 
 https://grouplens.org/datasets/movielens/
 
----
+### 🌐 REST API
 
-## 2. DummyJSON REST API
+DummyJSON Products API
 
-API Endpoint
-
-```
 https://dummyjson.com/products
-```
-
-The API provides product information including:
-
-- Product Name
-- Brand
-- Category
-- Price
-- Rating
-- Stock
 
 ---
 
-# 🔄 Pipeline Workflow
+# ⚙️ Features
 
-```text
-Start
+## ✅ Multi-source Data Ingestion
 
-↓
-
-Read Configuration
-
-↓
-
-Initialize Logger
-
-↓
-
-CSV Ingestion
-
-↓
-
-REST API Ingestion
-
-↓
-
-Generate Metadata
-
-↓
-
-Store Raw Data
-
-↓
-
-Save Logs
-
-↓
-
-Pipeline Completed
-```
-
----
-
-# 📦 Raw Data Storage
-
----
-
-**Integration Status**
-
-- **Ingestion (Member 1):** Validated — CSV and API ingestion run successfully and metadata saved to `data/metadata/ingestion_metadata.json`.
-- **Validation & Preparation (Member 2):** Validated — validation reports and EDA generated; prepared data saved in `data/processed`.
-- **Feature Engineering (Member 3):** Fully implemented (`src/features`) — ~96 engineered user/item/interaction/similarity features, a generated SQL schema (`feature_store/schema.sql`), and a custom versioned feature store (`feature_store/registry.json`) with point-in-time retrieval. See `docs/07_Feature_Engineering_Guide.md`.
-- **Model Training (Member 4):** Minimal working placeholder implemented (`src/models`) that trains and persists a baseline model at `models/baseline_model.joblib`.
-- **Member 5 Integration:** Verified integration of ingestion/validation/preparation wrappers (Member 5 wiring validated).
-
-Quick local E2E (developer):
-
-Windows PowerShell:
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r ci-requirements.txt
-python scripts/run_e2e.py
-```
-
-macOS / Linux:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r ci-requirements.txt
-python scripts/run_e2e.py
-```
-
-CI: A lightweight GitHub Actions workflow is provided at `.github/workflows/e2e.yml` which installs `ci-requirements.txt` and runs `scripts/run_e2e.py` as an end-to-end smoke test.
-
-
-CSV datasets are stored using timestamp-based partitioning.
-
-Example
-
-```text
-data/
-└── raw/
-    └── csv/
-        └── ratings/
-            └── 2026/
-                └── 07/
-                    └── 16/
-                        └── 225641/
-                            └── ratings.csv
-```
-
-REST API responses
-
-```text
-data/
-└── raw/
-    └── api/
-        └── products/
-            └── 2026/
-                └── 07/
-                    └── 16/
-                        └── 225642/
-                            └── products.json
-```
-
----
-
-# 📊 Metadata
-
-The pipeline automatically generates metadata.
-
-Example
-
-```json
-{
-    "dataset": "ratings",
-    "source_type": "CSV",
-    "records": 100836,
-    "file_size_mb": 2.37,
-    "status": "SUCCESS",
-    "ingestion_time": "2026-07-16T22:56:41"
-}
-```
-
-Metadata includes:
-
-- Dataset name
-- Source type
-- File size
-- Number of records
-- Destination
-- Status
-- Timestamp
-
----
-
-# 📝 Logging
-
-Execution logs are stored in:
-
-```text
-data/logs/ingestion.log
-```
-
-Logs include:
-
-- Pipeline start
 - CSV ingestion
-- API requests
-- Retry attempts
-- Errors
-- Completion status
+- REST API ingestion
+- Retry mechanism
+- Metadata generation
+- Logging
 
 ---
 
-# ⚙️ Installation
+## ✅ Data Validation
 
-Clone the repository
+Automated validation includes:
+
+- Schema validation
+- Missing value checks
+- Duplicate detection
+- Data type validation
+- Rating range validation
+
+---
+
+## ✅ Data Preparation
+
+- Cleaning
+- Normalization
+- Formatting
+- Processed dataset generation
+
+---
+
+## ✅ Exploratory Data Analysis
+
+Includes:
+
+- Rating distribution
+- Top-rated movies
+- User-item sparsity analysis
+
+---
+
+## ✅ Feature Engineering
+
+Generated features include:
+
+- User Features
+- Movie Features
+- Interaction Features
+- Genre Features
+- Temporal Features
+
+---
+
+## ✅ Offline Feature Store
+
+Features are stored with version control.
+
+Supports:
+
+- Version registry
+- Metadata
+- Feature retrieval
+- Point-in-time lookup
+
+---
+
+## ✅ Data Versioning (DVC)
+
+DVC is used for:
+
+- Dataset lineage
+- Version control
+- Pipeline reproducibility
+
+---
+
+## ✅ Recommendation Model
+
+Collaborative Filtering using
+
+**Truncated Singular Value Decomposition (TruncatedSVD)**
+
+Evaluation Metrics
+
+| Metric | Score |
+|---------|------:|
+| Precision@10 | **0.2739** |
+| Recall@10 | **0.1627** |
+| NDCG@10 | **0.3185** |
+
+---
+
+## ✅ MLflow
+
+Experiment tracking includes:
+
+- Parameters
+- Metrics
+- Artifacts
+- Model Registry
+
+---
+
+## ✅ Apache Airflow
+
+Pipeline orchestration includes:
+
+- Data Ingestion
+- Validation
+- Preparation
+- Feature Engineering
+- Feature Store Setup
+- Model Training
+
+---
+
+# 📸 Sample Outputs
+
+## Architecture
+
+> docs/images/architecture.png
+
+## Feature Store
+
+> docs/images/feature_store.png
+
+## MLflow
+
+> docs/images/mlflow.png
+
+## DVC
+
+> docs/images/dvc.png
+
+## Airflow
+
+> docs/images/airflow.png
+
+---
+
+# 🛠️ Technology Stack
+
+| Category | Technologies |
+|-----------|--------------|
+| Language | Python |
+| Data Processing | Pandas, NumPy |
+| Recommendation | Scikit-learn (TruncatedSVD) |
+| Feature Store | Custom Offline Store |
+| Versioning | DVC |
+| Experiment Tracking | MLflow |
+| Workflow | Apache Airflow |
+| Visualization | Matplotlib |
+| API | Requests |
+| Logging | Python Logging |
+
+---
+
+# ▶️ Running the Project
+
+## Install
 
 ```bash
-git clone https://github.com/saurabhsbade-bits/DM4ML-Group12.git
-```
+git clone https://github.com/<your-username>/RecoMart-Recommendation-Pipeline.git
 
-Move to the project directory
+cd RecoMart-Recommendation-Pipeline
 
-```bash
-cd DM4ML-Group12/RecoMart-Recommendation-Pipeline
-```
-
-Install dependencies
-
-```bash
 pip install -r requirements.txt
 ```
 
----
-
-# ▶️ Running the Pipeline
-
-Execute the complete ingestion pipeline
+### Execute Complete Pipeline
 
 ```bash
-python main.py
+python run_e2e.py
 ```
 
----
-
-# ⏰ Run Scheduler
-
-The scheduler automatically executes the pipeline at the configured time.
+### Execute Airflow
 
 ```bash
-python -m src.ingestion.scheduler
+airflow standalone
+```
+
+Open:
+
+```
+http://localhost:8080
 ```
 
 ---
 
-# 📦 Python Modules Used
+# 📈 Results
 
-- pathlib
-- shutil
-- pandas
-- requests
-- json
-- logging
-- schedule
-- datetime
-- time
+The implemented pipeline successfully demonstrates:
 
----
-
-# 📈 Expected Outputs
-
-After successful execution, the project generates:
-
-```
-✔ Raw CSV datasets
-
-✔ Raw JSON datasets
-
-✔ Metadata
-
-✔ Execution logs
-
-✔ Timestamped storage
-```
-
----
-
-# 📚 Documentation
-
-Project documentation is available in the `docs/` directory.
-
-- Business Problem
-- Project Objectives
-- Dataset Documentation
-- Storage Architecture
-- Ingestion Workflow
-- User Guide
-
----
-
-# 🛠️ Future Enhancements
-
-Potential future improvements include:
-
-- Data validation
-- Incremental ingestion
-- Data preprocessing
-- Feature engineering
+- End-to-end automated workflow
+- Multi-source ingestion
+- Automated validation
+- Versioned feature storage
+- Dataset versioning
 - Recommendation model training
-- Docker support
-- Kubernetes deployment
-- Apache Airflow orchestration
-- Cloud storage integration
-- Apache Kafka streaming
+- Experiment tracking
+- Workflow orchestration
 
 ---
 
-# 👨‍💻 Team
+# 👥 Team
 
-**Course:** Data Management for Machine Learning (DM4ML)
+**Group 12**
 
-**University:** BITS Pilani – Work Integrated Learning Programme (WILP)
+Data Management for Machine Learning (DM4ML)
+
+BITS Pilani WILP
 
 ---
 
-# 📄 License
+# 📚 References
 
-This project has been developed for academic purposes as part of the DM4ML course at BITS Pilani WILP.
+- MovieLens Dataset — https://grouplens.org/datasets/movielens/
+- Apache Airflow — https://airflow.apache.org/
+- MLflow — https://mlflow.org/
+- DVC — https://dvc.org/
+- Scikit-learn — https://scikit-learn.org/
+
+---
+
+# ⭐ Highlights
+
+✔ End-to-End MLOps Pipeline
+
+✔ Recommendation System
+
+✔ Apache Airflow
+
+✔ MLflow
+
+✔ DVC
+
+✔ Feature Store
+
+✔ TruncatedSVD Recommendation Engine
+
+✔ Reproducible Data Pipeline
+
+✔ BITS Pilani DM4ML Assignment
