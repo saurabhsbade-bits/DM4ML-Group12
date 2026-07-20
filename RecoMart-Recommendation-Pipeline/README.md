@@ -26,11 +26,6 @@ The pipeline integrates modern MLOps technologies including:
 
 ---
 
-# 🚀 Pipeline Architecture
-
-<p align="center">
-<img src="docs/images/architecture.png" width="900">
-</p>
 
 The pipeline consists of the following stages:
 
