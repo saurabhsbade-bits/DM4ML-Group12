@@ -45,9 +45,17 @@ DATA_DIR = PROJECT_ROOT / "data"
 
 RAW_DATA_DIR = DATA_DIR / "raw"
 PROCESSED_DATA_DIR = DATA_DIR / "processed"
+FEATURES_DIR = DATA_DIR / "features"
 
 CSV_RAW_DIR = RAW_DATA_DIR / "csv"
 API_RAW_DIR = RAW_DATA_DIR / "api"
+
+# ==========================================================
+# FEATURE STORE
+# ==========================================================
+
+FEATURE_STORE_DIR = PROJECT_ROOT / "feature_store"
+FEATURE_STORE_OFFLINE_DIR = FEATURE_STORE_DIR / "offline"
 
 # ==========================================================
 # LOGGING
@@ -94,10 +102,13 @@ REQUIRED_DIRECTORIES = [
     DATA_DIR,
     RAW_DATA_DIR,
     PROCESSED_DATA_DIR,
+    FEATURES_DIR,
     CSV_RAW_DIR,
     API_RAW_DIR,
     LOG_DIR,
     METADATA_DIR,
+    FEATURE_STORE_DIR,
+    FEATURE_STORE_OFFLINE_DIR,
 ]
 
 for directory in REQUIRED_DIRECTORIES:
