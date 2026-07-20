@@ -67,7 +67,9 @@ default_args = {
 
 def log_pipeline_start(**context):
     """Log pipeline execution start."""
-    execution_date = context['execution_date']
+    # `execution_date` was removed from the task context in Airflow 3.x;
+    # `logical_date` is the replacement (falls back to `ts` if unavailable).
+    execution_date = context.get('logical_date', context.get('ts'))
     logger.info(f"RecoMart Pipeline started at {execution_date}")
     logger.info(f"Task: {context['task'].task_id}")
 

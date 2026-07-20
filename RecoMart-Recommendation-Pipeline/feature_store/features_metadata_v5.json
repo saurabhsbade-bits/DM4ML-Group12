@@ -1,0 +1,920 @@
+[
+  {
+    "feature_name": "num_ratings",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "int",
+    "description": "Number of ratings the user has given (activity frequency).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "avg_rating",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "Mean rating given by the user.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "median_rating",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "Median rating given by the user.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "rating_std",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "Standard deviation of ratings given by the user.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "min_rating",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "Minimum rating given by the user.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "max_rating",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "Maximum rating given by the user.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "most_active_hour",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "int",
+    "description": "Hour of day (0-23) the user rates most often.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "most_active_dow",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "int",
+    "description": "Day of week (0=Mon..6=Sun) the user rates most often.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "activity_span_days",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "Days between the user's first and last rating.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "avg_days_between_ratings",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "Average gap in days between consecutive ratings by the user.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_no_genres_listed",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged '(no genres listed)' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_action",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'Action' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_adventure",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'Adventure' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_animation",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'Animation' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_children",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'Children' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_comedy",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'Comedy' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_crime",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'Crime' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_documentary",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'Documentary' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_drama",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'Drama' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_fantasy",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'Fantasy' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_film_noir",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'Film-Noir' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_horror",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'Horror' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_imax",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'IMAX' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_musical",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'Musical' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_mystery",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'Mystery' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_romance",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'Romance' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_sci_fi",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'Sci-Fi' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_thriller",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'Thriller' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_war",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'War' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "pref_western",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "User's average rating for movies tagged 'Western' (cold-start fallback: user's overall avg_rating).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "num_distinct_genres_rated",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "int",
+    "description": "Number of distinct genres the user has rated at least once.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "top_genre",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "str",
+    "description": "Genre with the most rating events from this user.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "top_genre_share",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "Share of the user's ratings that fall in their top genre.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_entropy",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "Shannon entropy of the user's genre distribution (taste diversity).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "num_tags_given",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "int",
+    "description": "Number of free-text tags the user has authored.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "activity_percentile",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "user_features",
+    "dtype": "float",
+    "description": "Percentile rank (0-1) of the user's rating count vs all users.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "feature_version",
+    "version": "v5",
+    "entity_type": "userId",
+    "source_table": "user_features",
+    "dtype": "unknown",
+    "description": "No description registered for this feature.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "computed_at",
+    "version": "v5",
+    "entity_type": "userId",
+    "source_table": "user_features",
+    "dtype": "unknown",
+    "description": "No description registered for this feature.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "title",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "str",
+    "description": "Movie title.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "release_year",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "Release year parsed from the movie title.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "item_age_years",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "Age of the movie relative to the newest release in the catalog.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "is_new_release",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "bool",
+    "description": "True if released within the last 3 years of the catalog's release span.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "num_genres",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "Number of genres tagged on the movie.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "primary_genre",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "str",
+    "description": "First-listed genre for the movie.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_no_genres_listed",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre '(no genres listed)', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_action",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'Action', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_adventure",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'Adventure', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_animation",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'Animation', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_children",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'Children', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_comedy",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'Comedy', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_crime",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'Crime', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_documentary",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'Documentary', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_drama",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'Drama', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_fantasy",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'Fantasy', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_film_noir",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'Film-Noir', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_horror",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'Horror', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_imax",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'IMAX', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_musical",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'Musical', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_mystery",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'Mystery', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_romance",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'Romance', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_sci_fi",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'Sci-Fi', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_thriller",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'Thriller', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_war",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'War', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "genre_western",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "1 if the movie is tagged with genre 'Western', else 0.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "num_ratings",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "Number of ratings the user has given (activity frequency).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "avg_rating",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "item_features",
+    "dtype": "float",
+    "description": "Mean rating given by the user.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "median_rating",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "item_features",
+    "dtype": "float",
+    "description": "Median rating given by the user.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "rating_std",
+    "version": "v5",
+    "entity_type": "user",
+    "source_table": "item_features",
+    "dtype": "float",
+    "description": "Standard deviation of ratings given by the user.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "popularity_percentile",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "float",
+    "description": "Percentile rank (0-1) of the movie's rating count vs all movies.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "recent_avg_rating",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "float",
+    "description": "Average rating over the most recent ~25% of the movie's rating events.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "rating_trend",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "float",
+    "description": "recent_avg_rating minus avg_rating; positive means the item is trending up.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "num_tags",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "int",
+    "description": "Number of free-text tags attached to the movie.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "top_tag",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "str",
+    "description": "Most common free-text tag attached to the movie.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "imdb_id",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "str",
+    "description": "IMDb identifier.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "tmdb_id",
+    "version": "v5",
+    "entity_type": "item",
+    "source_table": "item_features",
+    "dtype": "str",
+    "description": "TMDb identifier.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "feature_version",
+    "version": "v5",
+    "entity_type": "movieId",
+    "source_table": "item_features",
+    "dtype": "unknown",
+    "description": "No description registered for this feature.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "computed_at",
+    "version": "v5",
+    "entity_type": "movieId",
+    "source_table": "item_features",
+    "dtype": "unknown",
+    "description": "No description registered for this feature.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "userId",
+    "version": "v5",
+    "entity_type": "interaction_id",
+    "source_table": "interaction_features",
+    "dtype": "unknown",
+    "description": "No description registered for this feature.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "movieId",
+    "version": "v5",
+    "entity_type": "interaction_id",
+    "source_table": "interaction_features",
+    "dtype": "unknown",
+    "description": "No description registered for this feature.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "rating",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "float",
+    "description": "Rating given in this interaction event.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "timestamp",
+    "version": "v5",
+    "entity_type": "interaction_id",
+    "source_table": "interaction_features",
+    "dtype": "unknown",
+    "description": "No description registered for this feature.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "event_datetime",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "datetime",
+    "description": "Human-readable timestamp of the rating event.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "recency_days",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "float",
+    "description": "Days between this event and the most recent event in the dataset.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "user_interaction_seq_num",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "int",
+    "description": "1-indexed chronological position of this event among the user's ratings.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "days_since_user_prev_rating",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "float",
+    "description": "Days since the user's previous rating (NaN for their first).",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "user_avg_rating",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "float",
+    "description": "Denormalized copy of the user's avg_rating at feature-build time.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "user_activity_percentile",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "float",
+    "description": "Denormalized copy of the user's activity_percentile at feature-build time.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "item_avg_rating",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "float",
+    "description": "Denormalized copy of the item's avg_rating at feature-build time.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "item_popularity_percentile",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "float",
+    "description": "Denormalized copy of the item's popularity_percentile at feature-build time.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "rating_dev_from_user_avg",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "float",
+    "description": "This rating minus the user's average rating.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "rating_dev_from_item_avg",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "float",
+    "description": "This rating minus the item's average rating.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "user_item_cross_rating",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "float",
+    "description": "Cross feature: user_avg_rating * item_avg_rating.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "user_activity_x_item_popularity",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "float",
+    "description": "Cross feature: user activity percentile * item popularity percentile.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "item_trending_score",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "float",
+    "description": "Item popularity percentile decayed by how long ago this event happened.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "user_genre_affinity_for_item",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "float",
+    "description": "User's average preference across the genres tagged on this item.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "top_similar_user_id",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "int",
+    "description": "Most similar other user, by cosine similarity of rating vectors.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "top_similar_user_similarity",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "float",
+    "description": "Cosine similarity score to top_similar_user_id.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "top_similar_item_id",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "int",
+    "description": "Most content-similar other movie, by cosine similarity of genre vectors.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "top_similar_item_similarity",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "float",
+    "description": "Cosine similarity score to top_similar_item_id.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "cf_predicted_rating",
+    "version": "v5",
+    "entity_type": "interaction",
+    "source_table": "interaction_features",
+    "dtype": "float",
+    "description": "Collaborative-filtering estimate: similarity-weighted rating from the user's nearest neighbours for this item.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "feature_version",
+    "version": "v5",
+    "entity_type": "interaction_id",
+    "source_table": "interaction_features",
+    "dtype": "unknown",
+    "description": "No description registered for this feature.",
+    "created_at": "20260720175243"
+  },
+  {
+    "feature_name": "computed_at",
+    "version": "v5",
+    "entity_type": "interaction_id",
+    "source_table": "interaction_features",
+    "dtype": "unknown",
+    "description": "No description registered for this feature.",
+    "created_at": "20260720175243"
+  }
+]

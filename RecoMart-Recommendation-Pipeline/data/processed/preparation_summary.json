@@ -30,7 +30,7 @@
             "encoding_operations": {
                 "title": {
                     "method": "label_encoding",
-                    "original_type": "str",
+                    "original_type": "object",
                     "unique_values": 9737,
                     "mapping": {
                         "'71 (2014)": "0",
@@ -9775,7 +9775,7 @@
                 },
                 "genres": {
                     "method": "label_encoding",
-                    "original_type": "str",
+                    "original_type": "object",
                     "unique_values": 951,
                     "mapping": {
                         "(no genres listed)": "0",
@@ -10748,7 +10748,7 @@
             },
             "processed_columns": 3
         },
-        "output_file": "data\\processed\\movies_processed.csv"
+        "output_file": "/opt/airflow/project/data/processed/movies_processed.csv"
     },
     "ratings": {
         "clean_report": {
@@ -10788,7 +10788,7 @@
                     "original_std": 182.61849146349994,
                     "normalized_min": 0.0,
                     "normalized_max": 0.9999999999999999,
-                    "normalized_mean": 0.5338712045460867,
+                    "normalized_mean": 0.5338712045460866,
                     "normalized_std": 0.29986616003858774
                 },
                 "movieId": {
@@ -10810,7 +10810,7 @@
                     "original_std": 1.042529239060635,
                     "normalized_min": 0.0,
                     "normalized_max": 1.0,
-                    "normalized_mean": 0.6670126630259915,
+                    "normalized_mean": 0.6670126630259916,
                     "normalized_std": 0.23167316423569667
                 },
                 "timestamp": {
@@ -10827,7 +10827,7 @@
             },
             "processed_columns": 4
         },
-        "output_file": "data\\processed\\ratings_processed.csv"
+        "output_file": "/opt/airflow/project/data/processed/ratings_processed.csv"
     },
     "links": {
         "clean_report": {
@@ -10905,7 +10905,7 @@
             },
             "processed_columns": 3
         },
-        "output_file": "data\\processed\\links_processed.csv"
+        "output_file": "/opt/airflow/project/data/processed/links_processed.csv"
     },
     "tags": {
         "clean_report": {
@@ -10938,7 +10938,7 @@
             "encoding_operations": {
                 "tag": {
                     "method": "label_encoding",
-                    "original_type": "str",
+                    "original_type": "object",
                     "unique_values": 1589,
                     "mapping": {
                         "\"artsy\"": "0",
@@ -12571,6 +12571,6 @@
             },
             "processed_columns": 4
         },
-        "output_file": "data\\processed\\tags_processed.csv"
+        "output_file": "/opt/airflow/project/data/processed/tags_processed.csv"
     }
 }

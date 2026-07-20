@@ -42,7 +42,7 @@
         "feature_version",
         "computed_at"
       ],
-      "source": "offline\\v1\\user_features.csv"
+      "source": "offline/v6/user_features.csv"
     },
     "item_features": {
       "entity": "movieId",
@@ -87,7 +87,7 @@
         "feature_version",
         "computed_at"
       ],
-      "source": "offline\\v1\\item_features.csv"
+      "source": "offline/v6/item_features.csv"
     },
     "interaction_features": {
       "entity": "interaction_id",
@@ -118,13 +118,58 @@
         "feature_version",
         "computed_at"
       ],
-      "source": "offline\\v1\\interaction_features.csv"
+      "source": "offline/v6/interaction_features.csv"
     }
   },
   "versions": [
     {
       "version": "v1",
       "created_at": "20260720103457",
+      "row_counts": {
+        "user_features": 610,
+        "item_features": 9742,
+        "interaction_features": 100836
+      }
+    },
+    {
+      "version": "v2",
+      "created_at": "20260720174909",
+      "row_counts": {
+        "user_features": 610,
+        "item_features": 9742,
+        "interaction_features": 100836
+      }
+    },
+    {
+      "version": "v3",
+      "created_at": "20260720174952",
+      "row_counts": {
+        "user_features": 610,
+        "item_features": 9742,
+        "interaction_features": 100836
+      }
+    },
+    {
+      "version": "v4",
+      "created_at": "20260720175126",
+      "row_counts": {
+        "user_features": 610,
+        "item_features": 9742,
+        "interaction_features": 100836
+      }
+    },
+    {
+      "version": "v5",
+      "created_at": "20260720175243",
+      "row_counts": {
+        "user_features": 610,
+        "item_features": 9742,
+        "interaction_features": 100836
+      }
+    },
+    {
+      "version": "v6",
+      "created_at": "20260720180432",
       "row_counts": {
         "user_features": 610,
         "item_features": 9742,

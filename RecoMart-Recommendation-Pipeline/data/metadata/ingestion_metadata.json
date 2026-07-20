@@ -2,50 +2,50 @@
     {
         "dataset": "movies",
         "source_type": "CSV",
-        "source_file": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\dataset\\movies.csv",
-        "destination": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\csv\\movies\\2026\\07\\19\\205614\\movies.csv",
+        "source_file": "/opt/airflow/project/dataset/movies.csv",
+        "destination": "/opt/airflow/project/data/raw/csv/movies/2026/07/20/180255/movies.csv",
         "records": 9742,
         "file_size_mb": 0.47,
         "status": "SUCCESS",
-        "ingestion_time": "2026-07-19T20:56:14.580217"
+        "ingestion_time": "2026-07-20T18:02:56.026112"
     },
     {
         "dataset": "ratings",
         "source_type": "CSV",
-        "source_file": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\dataset\\ratings.csv",
-        "destination": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\csv\\ratings\\2026\\07\\19\\205614\\ratings.csv",
+        "source_file": "/opt/airflow/project/dataset/ratings.csv",
+        "destination": "/opt/airflow/project/data/raw/csv/ratings/2026/07/20/180256/ratings.csv",
         "records": 100836,
         "file_size_mb": 2.37,
         "status": "SUCCESS",
-        "ingestion_time": "2026-07-19T20:56:14.623409"
+        "ingestion_time": "2026-07-20T18:02:56.475772"
     },
     {
         "dataset": "links",
         "source_type": "CSV",
-        "source_file": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\dataset\\links.csv",
-        "destination": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\csv\\links\\2026\\07\\19\\205614\\links.csv",
+        "source_file": "/opt/airflow/project/dataset/links.csv",
+        "destination": "/opt/airflow/project/data/raw/csv/links/2026/07/20/180256/links.csv",
         "records": 9742,
         "file_size_mb": 0.19,
         "status": "SUCCESS",
-        "ingestion_time": "2026-07-19T20:56:14.644417"
+        "ingestion_time": "2026-07-20T18:02:56.691517"
     },
     {
         "dataset": "tags",
         "source_type": "CSV",
-        "source_file": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\dataset\\tags.csv",
-        "destination": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\csv\\tags\\2026\\07\\19\\205614\\tags.csv",
+        "source_file": "/opt/airflow/project/dataset/tags.csv",
+        "destination": "/opt/airflow/project/data/raw/csv/tags/2026/07/20/180256/tags.csv",
         "records": 3683,
         "file_size_mb": 0.11,
         "status": "SUCCESS",
-        "ingestion_time": "2026-07-19T20:56:14.665792"
+        "ingestion_time": "2026-07-20T18:02:56.878237"
     },
     {
         "dataset": "products",
         "source_type": "REST API",
-        "destination": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\api\\products\\2026\\07\\19\\205615\\products.json",
+        "destination": "/opt/airflow/project/data/raw/api/products/2026/07/20/180257/products.json",
         "records": 30,
         "file_size_mb": 0.07,
         "status": "SUCCESS",
-        "ingestion_time": "2026-07-19T20:56:15.210447"
+        "ingestion_time": "2026-07-20T18:02:57.455032"
     }
 ]
