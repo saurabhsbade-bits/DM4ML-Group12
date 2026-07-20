@@ -1,0 +1,51 @@
+digraph recom_pipeline {
+	graph [label=recom_pipeline labelloc=t rankdir=LR]
+	subgraph cluster_feature_layer {
+		color="#000000" fillcolor="#6495ed7f" label=feature_layer shape=rectangle style=filled
+		"feature_layer.upstream_join_id" [color="#000000" fillcolor=CornflowerBlue height=0.2 label="" shape=circle style="filled,rounded" width=0.2]
+		"feature_layer.engineer_features" [color="#000000" fillcolor="#ffefeb" label=engineer_features shape=rectangle style="filled,rounded"]
+		"feature_layer.setup_feature_store" [color="#000000" fillcolor="#ffefeb" label=setup_feature_store shape=rectangle style="filled,rounded"]
+	}
+	subgraph cluster_ingestion_layer {
+		color="#000000" fillcolor="#6495ed7f" label=ingestion_layer shape=rectangle style=filled
+		"ingestion_layer.upstream_join_id" [color="#000000" fillcolor=CornflowerBlue height=0.2 label="" shape=circle style="filled,rounded" width=0.2]
+		"ingestion_layer.downstream_join_id" [color="#000000" fillcolor=CornflowerBlue height=0.2 label="" shape=circle style="filled,rounded" width=0.2]
+		"ingestion_layer.ingest_data" [color="#000000" fillcolor="#ffefeb" label=ingest_data shape=rectangle style="filled,rounded"]
+	}
+	subgraph cluster_model_layer {
+		color="#000000" fillcolor="#6495ed7f" label=model_layer shape=rectangle style=filled
+		"model_layer.upstream_join_id" [color="#000000" fillcolor=CornflowerBlue height=0.2 label="" shape=circle style="filled,rounded" width=0.2]
+		"model_layer.downstream_join_id" [color="#000000" fillcolor=CornflowerBlue height=0.2 label="" shape=circle style="filled,rounded" width=0.2]
+		"model_layer.train_model" [color="#000000" fillcolor="#ffefeb" label=train_model shape=rectangle style="filled,rounded"]
+	}
+	pipeline_end [color="#000000" fillcolor="#ffefeb" label=pipeline_end shape=rectangle style="filled,rounded"]
+	pipeline_start [color="#000000" fillcolor="#ffefeb" label=pipeline_start shape=rectangle style="filled,rounded"]
+	subgraph cluster_preparation_layer {
+		color="#000000" fillcolor="#6495ed7f" label=preparation_layer shape=rectangle style=filled
+		"preparation_layer.upstream_join_id" [color="#000000" fillcolor=CornflowerBlue height=0.2 label="" shape=circle style="filled,rounded" width=0.2]
+		"preparation_layer.downstream_join_id" [color="#000000" fillcolor=CornflowerBlue height=0.2 label="" shape=circle style="filled,rounded" width=0.2]
+		"preparation_layer.prepare_data" [color="#000000" fillcolor="#ffefeb" label=prepare_data shape=rectangle style="filled,rounded"]
+	}
+	subgraph cluster_validation_layer {
+		color="#000000" fillcolor="#6495ed7f" label=validation_layer shape=rectangle style=filled
+		"validation_layer.upstream_join_id" [color="#000000" fillcolor=CornflowerBlue height=0.2 label="" shape=circle style="filled,rounded" width=0.2]
+		"validation_layer.downstream_join_id" [color="#000000" fillcolor=CornflowerBlue height=0.2 label="" shape=circle style="filled,rounded" width=0.2]
+		"validation_layer.validate_data" [color="#000000" fillcolor="#ffefeb" label=validate_data shape=rectangle style="filled,rounded"]
+	}
+	"feature_layer.engineer_features" -> "feature_layer.setup_feature_store"
+	"feature_layer.setup_feature_store" -> "model_layer.upstream_join_id"
+	"feature_layer.upstream_join_id" -> "feature_layer.engineer_features"
+	"ingestion_layer.downstream_join_id" -> "validation_layer.upstream_join_id"
+	"ingestion_layer.ingest_data" -> "ingestion_layer.downstream_join_id"
+	"ingestion_layer.upstream_join_id" -> "ingestion_layer.ingest_data"
+	"model_layer.downstream_join_id" -> pipeline_end
+	"model_layer.train_model" -> "model_layer.downstream_join_id"
+	"model_layer.upstream_join_id" -> "model_layer.train_model"
+	pipeline_start -> "ingestion_layer.upstream_join_id"
+	"preparation_layer.downstream_join_id" -> "feature_layer.upstream_join_id"
+	"preparation_layer.prepare_data" -> "preparation_layer.downstream_join_id"
+	"preparation_layer.upstream_join_id" -> "preparation_layer.prepare_data"
+	"validation_layer.downstream_join_id" -> "preparation_layer.upstream_join_id"
+	"validation_layer.upstream_join_id" -> "validation_layer.validate_data"
+	"validation_layer.validate_data" -> "validation_layer.downstream_join_id"
+}
