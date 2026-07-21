@@ -14,6 +14,14 @@
 
 RecoMart Recommendation Pipeline is an **end-to-end MLOps workflow** developed as part of the **Data Management for Machine Learning (DM4ML)** course at **BITS Pilani WILP**.
 
+Name	BITS Email ID	Contribution
+Ajay Nath B	2025AA05210@wilp.bits-pilani.ac.in	20%
+Anjali Bhardwaj	2025AA05214@wilp.bits-pilani.ac.in	20%
+Saurabh Sudhir Bade	2025aa05203@wilp.bits-Pilani.ac.in	20%
+Rohit Aditya Rambhatla	2025aa05205@wilp.bits-pilani.ac.in	20%
+Prabhakaran S	2025aa05223@wilp.bits-pilani.ac.in	20%
+
+
 The project demonstrates the complete lifecycle of a recommendation system, from multi-source data ingestion to model training, experiment tracking, feature management, and workflow orchestration.
 
 The pipeline integrates modern MLOps technologies including:
