@@ -1,11 +1,11 @@
 {
     "status": "COMPLETED",
-    "timestamp": "2026-07-19T20:56:15.291055",
+    "timestamp": "2026-07-20T18:03:14.630539",
     "validation": {
         "movies": {
             "dataset": "movies",
-            "file_path": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\csv\\movies\\2026\\07\\19\\200333\\movies.csv",
-            "timestamp": "2026-07-19T20:56:15.228590",
+            "file_path": "/opt/airflow/project/data/raw/csv/movies/2026/07/19/200333/movies.csv",
+            "timestamp": "2026-07-20T18:03:14.354467",
             "total_rows": 9742,
             "total_columns": 3,
             "checks": {
@@ -44,35 +44,20 @@
                 },
                 "data_types": {
                     "check": "Data Type Validation",
-                    "details": {
-                        "title": {
-                            "expected": "str",
-                            "actual": "str"
-                        },
-                        "genres": {
-                            "expected": "str",
-                            "actual": "str"
-                        }
-                    },
-                    "status": "FAIL",
-                    "message": "Data type mismatches found in 2 columns"
+                    "details": {},
+                    "status": "PASS",
+                    "message": "All data types match schema"
                 }
             },
-            "issues": [
-                {
-                    "type": "Data Type Mismatch",
-                    "severity": "MEDIUM",
-                    "message": "Type mismatches in: ['title', 'genres']"
-                }
-            ],
-            "status": "FAIL",
-            "passed": 3,
-            "failed": 1
+            "issues": [],
+            "status": "PASS",
+            "passed": 4,
+            "failed": 0
         },
         "ratings": {
             "dataset": "ratings",
-            "file_path": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\csv\\ratings\\2026\\07\\19\\200333\\ratings.csv",
-            "timestamp": "2026-07-19T20:56:15.263026",
+            "file_path": "/opt/airflow/project/data/raw/csv/ratings/2026/07/19/200333/ratings.csv",
+            "timestamp": "2026-07-20T18:03:14.503161",
             "total_rows": 100836,
             "total_columns": 4,
             "checks": {
@@ -131,8 +116,8 @@
         },
         "links": {
             "dataset": "links",
-            "file_path": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\csv\\links\\2026\\07\\19\\200333\\links.csv",
-            "timestamp": "2026-07-19T20:56:15.276378",
+            "file_path": "/opt/airflow/project/data/raw/csv/links/2026/07/19/200333/links.csv",
+            "timestamp": "2026-07-20T18:03:14.558565",
             "total_rows": 9742,
             "total_columns": 3,
             "checks": {
@@ -207,8 +192,8 @@
         },
         "tags": {
             "dataset": "tags",
-            "file_path": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\csv\\tags\\2026\\07\\19\\200333\\tags.csv",
-            "timestamp": "2026-07-19T20:56:15.280334",
+            "file_path": "/opt/airflow/project/data/raw/csv/tags/2026/07/19/200333/tags.csv",
+            "timestamp": "2026-07-20T18:03:14.585106",
             "total_rows": 3683,
             "total_columns": 4,
             "checks": {
@@ -249,26 +234,15 @@
                 },
                 "data_types": {
                     "check": "Data Type Validation",
-                    "details": {
-                        "tag": {
-                            "expected": "str",
-                            "actual": "str"
-                        }
-                    },
-                    "status": "FAIL",
-                    "message": "Data type mismatches found in 1 columns"
+                    "details": {},
+                    "status": "PASS",
+                    "message": "All data types match schema"
                 }
             },
-            "issues": [
-                {
-                    "type": "Data Type Mismatch",
-                    "severity": "MEDIUM",
-                    "message": "Type mismatches in: ['tag']"
-                }
-            ],
-            "status": "FAIL",
-            "passed": 3,
-            "failed": 1
+            "issues": [],
+            "status": "PASS",
+            "passed": 4,
+            "failed": 0
         }
     },
     "profiling": {
@@ -277,8 +251,8 @@
         "profiles": {
             "movies": {
                 "dataset": "movies",
-                "file_path": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\csv\\movies\\2026\\07\\19\\200333\\movies.csv",
-                "timestamp": "2026-07-19T20:56:15.291055",
+                "file_path": "/opt/airflow/project/data/raw/csv/movies/2026/07/19/200333/movies.csv",
+                "timestamp": "2026-07-20T18:03:14.630539",
                 "basic_info": {
                     "total_rows": 9742,
                     "total_columns": 3,
@@ -305,7 +279,7 @@
                     },
                     "title": {
                         "name": "title",
-                        "data_type": "str",
+                        "data_type": "object",
                         "non_null_count": 9742,
                         "null_count": 0,
                         "null_percentage": 0.0,
@@ -316,15 +290,15 @@
                         "avg_length": 25.85,
                         "top_values": {
                             "Emma (1996)": 2,
-                            "Saturn 3 (1980)": 2,
-                            "Confessions of a Dangerous Mind (2002)": 2,
+                            "War of the Worlds (2005)": 2,
                             "Eros (2004)": 2,
-                            "War of the Worlds (2005)": 2
+                            "Confessions of a Dangerous Mind (2002)": 2,
+                            "Saturn 3 (1980)": 2
                         }
                     },
                     "genres": {
                         "name": "genres",
-                        "data_type": "str",
+                        "data_type": "object",
                         "non_null_count": 9742,
                         "null_count": 0,
                         "null_percentage": 0.0,
@@ -353,8 +327,8 @@
             },
             "ratings": {
                 "dataset": "ratings",
-                "file_path": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\csv\\ratings\\2026\\07\\19\\200333\\ratings.csv",
-                "timestamp": "2026-07-19T20:56:15.346731",
+                "file_path": "/opt/airflow/project/data/raw/csv/ratings/2026/07/19/200333/ratings.csv",
+                "timestamp": "2026-07-20T18:03:14.832359",
                 "basic_info": {
                     "total_rows": 100836,
                     "total_columns": 4,
@@ -439,8 +413,8 @@
             },
             "links": {
                 "dataset": "links",
-                "file_path": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\csv\\links\\2026\\07\\19\\200333\\links.csv",
-                "timestamp": "2026-07-19T20:56:15.402369",
+                "file_path": "/opt/airflow/project/data/raw/csv/links/2026/07/19/200333/links.csv",
+                "timestamp": "2026-07-20T18:03:14.984146",
                 "basic_info": {
                     "total_rows": 9742,
                     "total_columns": 3,
@@ -509,8 +483,8 @@
             },
             "tags": {
                 "dataset": "tags",
-                "file_path": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\raw\\csv\\tags\\2026\\07\\19\\200333\\tags.csv",
-                "timestamp": "2026-07-19T20:56:15.413782",
+                "file_path": "/opt/airflow/project/data/raw/csv/tags/2026/07/19/200333/tags.csv",
+                "timestamp": "2026-07-20T18:03:15.022252",
                 "basic_info": {
                     "total_rows": 3683,
                     "total_columns": 4,
@@ -553,7 +527,7 @@
                     },
                     "tag": {
                         "name": "tag",
-                        "data_type": "str",
+                        "data_type": "object",
                         "non_null_count": 3683,
                         "null_count": 0,
                         "null_percentage": 0.0,
@@ -565,9 +539,9 @@
                         "top_values": {
                             "In Netflix queue": 131,
                             "atmospheric": 36,
-                            "superhero": 24,
                             "thought-provoking": 24,
-                            "funny": 23
+                            "superhero": 24,
+                            "surreal": 23
                         }
                     },
                     "timestamp": {
@@ -598,5 +572,5 @@
             }
         }
     },
-    "report_path": "C:\\Users\\saura\\DM4ML-Group12\\RecoMart-Recommendation-Pipeline\\data\\reports\\DataQualityReport_20260719_205615.pdf"
+    "report_path": "/opt/airflow/project/data/reports/DataQualityReport_20260720_180315.pdf"
 }
